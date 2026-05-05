@@ -1,5 +1,5 @@
 ---
-title: FYP Backend
+title: Fyp Backend
 emoji: 🚀
 colorFrom: blue
 colorTo: indigo
@@ -9,5 +9,3 @@ pinned: false
 ---
 
 # FYP Backend API
-
-This is the FastAPI backend for the FYP application.
