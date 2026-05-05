@@ -12,3 +12,4 @@ groq
 numpy
 pandas
 sentence-transformers
+psycopg2-binary
