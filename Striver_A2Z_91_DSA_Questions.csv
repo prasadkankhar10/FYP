@@ -1,0 +1,274 @@
+﻿Question + Explanation,Approach,C++ Code
+"User Input / Output
+
+Explanation: Read values and produce the required output.",Use cin/cout. O(1) auxiliary space.,int x; cin>>x; cout<<x;
+"Data Types
+
+Explanation: Choose appropriate primitive types for values and operations.",Use int/long long/double/char/bool according to range and precision. O(1).,long long x; double y; char c; bool ok;
+"If Else statements
+
+Explanation: Execute different logic depending on conditions.",Use if/else with mutually exclusive conditions. O(1) for constant work.,"if(x>0) cout<<""positive""; else cout<<""non-positive"";"
+"Switch Statement
+
+Explanation: Select one branch based on a discrete value.",Use switch for fixed constant cases. O(1) for a fixed number of cases.,switch(x){case 1: /*...*/ break; default: /*...*/;}
+"What are arrays, strings?
+
+Explanation: Understand contiguous arrays and sequence-based strings.",Use vector for dynamic arrays and string for text. Traversal is O(n).,vector<int> a(n); string s;
+"For loops
+
+Explanation: Repeat an operation over a known range.",Use a for loop; O(n) for n iterations.,for(int i=0;i<n;i++){ /* work */ }
+"While loops
+
+Explanation: Repeat while a condition remains true.",Use while when the stopping condition changes dynamically. Usually O(n).,while(condition){ /* work */ }
+"Functions (Pass by Reference and Value)
+
+Explanation: Understand copying arguments versus modifying/avoiding copies.",Pass small values by value; large objects by const reference; use reference when modification is required.,void f(int x){} void g(vector<int>& a){}
+"Time Complexity
+
+Explanation: Measure how runtime and memory grow with input size.",Count dominant operations and auxiliary structures; express using Big-O.,// Identify the dominant loop/operation and auxiliary memory.
+"Patterns
+
+Explanation: Print common star/number patterns using nested loops.",Use row/column loops; O(n²) for an n-row square pattern.,for(int i=1;i<=n;i++){for(int j=1;j<=i;j++)cout<<'*';cout<<'\n';}
+"C++ STL
+
+Explanation: Learn containers and algorithms used in competitive programming.","Use vector, set, map, unordered_map, stack, queue and standard algorithms.","vector<int> a; sort(a.begin(),a.end());"
+"Java Collections
+
+Explanation: Understand Java collection equivalents used in DSA.","Use ArrayList, HashMap, HashSet, Stack/Deque and PriorityQueue as appropriate.",// Java collection concept; use the C++ STL equivalent in C++ solutions.
+"Count Digits
+
+Explanation: Count the number of digits in an integer.","Repeatedly divide by 10. O(log10 n), O(1).",int cnt=0; while(n){cnt++;n/=10;} return cnt;
+"Reverse a Number
+
+Explanation: Reverse the decimal digits of an integer.","Build answer with digit extraction. O(log n), O(1).",long long rev=0; while(n){rev=rev*10+n%10;n/=10;} return rev;
+"Check Palindrome
+
+Explanation: Check whether a number reads the same backward.","Reverse the number or compare digits. O(log n), O(1).","long long x=n,rev=0; while(n){rev=rev*10+n%10;n/=10;} return x==rev;"
+"GCD Or HCF
+
+Explanation: Find the greatest common divisor of two integers.","Euclidean algorithm. O(log(min(a,b))), O(1).",while(b){int t=a%b;a=b;b=t;} return a;
+"Armstrong Numbers
+
+Explanation: Check whether a number equals the sum of its digits raised to the digit count.","Extract digits and accumulate powers. O(d), O(1).","int x=n,d=to_string(n).size(),s=0; while(x){s+=pow(x%10,d);x/=10;} return s==n;"
+"Print all Divisors
+
+Explanation: Print every divisor of n.","Check i up to sqrt(n) and add both divisors. O(sqrt n), O(sqrt n) output.",for(int i=1;i*1LL*i<=n;i++)if(n%i==0){cout<<i<<' ';if(i*i!=n)cout<<n/i<<' ';}
+"Check for Prime
+
+Explanation: Determine whether n has exactly two positive divisors.","Test divisibility up to sqrt(n). O(sqrt n), O(1).",if(n<2)return false;for(int i=2;i*1LL*i<=n;i++)if(n%i==0)return false;return true;
+"Understand recursion by print something N times
+
+Explanation: Print a value N times using recursion.",Base case n=0; recurse with n-1. O(n) time and stack.,"void f(int n){if(n==0)return;cout<<""Hello\n"";f(n-1);}"
+"Print name N times using recursion
+
+Explanation: Print a name N times recursively.",Base case then recurse. O(n) time and stack.,"void f(int n){if(n==0)return;cout<<""Prasad\n"";f(n-1);}"
+"Print 1 to N using recursion
+
+Explanation: Print numbers 1 through N recursively.","Recurse first, then print on unwind for reverse; or use parameter i. O(n).","void f(int i,int n){if(i>n)return;cout<<i<<' ';f(i+1,n);}"
+"Print N to 1 using recursion
+
+Explanation: Print numbers N down to 1 recursively.",Print before recursive call. O(n) time and stack.,void f(int n){if(n==0)return;cout<<n<<' ';f(n-1);}
+"Sum of first N numbers
+
+Explanation: Compute 1+2+...+N.",Use formula for O(1) time and space.,long long ans=1LL*n*(n+1)/2;
+"Factorial of N numbers
+
+Explanation: Compute N factorial.","Iterative multiplication. O(n) time, O(1) extra.",long long f=1;for(int i=2;i<=n;i++)f*=i;return f;
+"Reverse an array
+
+Explanation: Reverse an array in-place.","Two pointers swap ends inward. O(n), O(1).","int l=0,r=n-1;while(l<r)swap(a[l++],a[r--]);"
+"Check if a string is palindrome or not
+
+Explanation: Check whether a string is the same forward and backward.","Two pointers from both ends. O(n), O(1).","int l=0,r=s.size()-1;while(l<r)if(s[l++]!=s[r--])return false;return true;"
+"Fibonacci Number
+
+Explanation: Find the nth Fibonacci number.","Iterative two-variable DP. O(n), O(1).","long long a=0,b=1;for(int i=0;i<n;i++)tie(a,b)=make_tuple(b,a+b);return a;"
+"Hashing Theory
+
+Explanation: Understand mapping keys to frequencies for fast lookup.",Use unordered_map for average O(1) lookup/insertion.,"unordered_map<int,int> freq; for(int x:a)freq[x]++;"
+"Counting frequencies of array elements
+
+Explanation: Count how often each value occurs.","Use a hash map. O(n) average time, O(n) space.","unordered_map<int,int> mp;for(int x:a)mp[x]++;"
+"Find the highest/lowest frequency element
+
+Explanation: Find elements with maximum and minimum frequency.","Build frequency map, then scan it. O(n) average, O(n) space.","unordered_map<int,int> mp;for(int x:a)mp[x]++;int hi=-1,lo=INT_MAX;for(auto [x,f]:mp){hi=max(hi,f);lo=min(lo,f);}"
+"Selection Sort
+
+Explanation: Repeatedly select the minimum remaining element.","Select min and swap. O(n²), O(1).","for(int i=0;i<n;i++){int p=i;for(int j=i+1;j<n;j++)if(a[j]<a[p])p=j;swap(a[i],a[p]);}"
+"Bubble Sort
+
+Explanation: Repeatedly swap adjacent inversions.","Optimized bubble sort. O(n²) worst, O(n) best, O(1).","for(int i=n-1;i;i--){bool ok=true;for(int j=0;j<i;j++)if(a[j]>a[j+1])swap(a[j],a[j+1]),ok=false;if(ok)break;}"
+"Insertion Sort
+
+Explanation: Insert each element into its sorted prefix.","O(n²) worst, O(n) best, O(1).","for(int i=1;i<n;i++){int x=a[i],j=i-1;while(j>=0&&a[j]>x)a[j+1]=a[j--];a[j+1]=x;}"
+"Merge Sort
+
+Explanation: Divide the array and merge sorted halves.","Divide and conquer. O(n log n), O(n) auxiliary.",// recursive merge sort
+"Recursive Bubble Sort
+
+Explanation: Implement bubble sort recursively.","Bubble one pass, then recurse on n-1. O(n²), O(n) stack.","void f(vector<int>&a,int n){if(n<=1)return;for(int i=0;i<n-1;i++)if(a[i]>a[i+1])swap(a[i],a[i+1]);f(a,n-1);}"
+"Recursive Insertion Sort
+
+Explanation: Implement insertion sort recursively.","Sort first n-1 then insert last. O(n²), O(n) stack.","void f(vector<int>&a,int n){if(n<=1)return;f(a,n-1);int x=a[n-1],j=n-2;while(j>=0&&a[j]>x)a[j+1]=a[j--];a[j+1]=x;}"
+"Quick Sort
+
+Explanation: Partition around a pivot and recursively sort both sides.","Average O(n log n), worst O(n²), O(log n) average stack.",// partition + recursive quicksort
+"Largest Element in an Array
+
+Explanation: Find the maximum element.","Single scan. O(n), O(1).","return *max_element(a.begin(),a.end());"
+"Second Largest Element in an Array without sorting
+
+Explanation: Find the second largest distinct element.","Track largest and second largest. O(n), O(1).","int mx=INT_MIN,sm=INT_MIN;for(int x:a){if(x>mx)sm=mx,mx=x;else if(x<mx&&x>sm)sm=x;}return sm;"
+"Check if the array is sorted
+
+Explanation: Check non-decreasing order.","Compare adjacent values. O(n), O(1).",for(int i=1;i<n;i++)if(a[i]<a[i-1])return false;return true;
+"Remove duplicates from Sorted array
+
+Explanation: Remove duplicates in-place from a sorted array.","Two pointers. O(n), O(1).",int j=0;for(int i=1;i<n;i++)if(a[i]!=a[j])a[++j]=a[i];return j+1;
+"Left Rotate an array by one place
+
+Explanation: Move the first element to the end.","Shift left. O(n), O(1).","rotate(a.begin(),a.begin()+1,a.end());"
+"Left rotate an array by D places
+
+Explanation: Rotate left by D positions.","Reversal algorithm. O(n), O(1).","d%=n;reverse(a.begin(),a.begin()+d);reverse(a.begin()+d,a.end());reverse(a.begin(),a.end());"
+"Move Zeros to end
+
+Explanation: Move all zeros to the end while preserving non-zero order.","Two-pointer compaction. O(n), O(1).",int j=0;for(int x:a)if(x)a[j++]=x;while(j<n)a[j++]=0;
+"Linear Search
+
+Explanation: Find a target in an unsorted array.","Sequential scan. O(n), O(1).",for(int i=0;i<n;i++)if(a[i]==x)return i;return -1;
+"Find the Union
+
+Explanation: Find the sorted union of two sorted arrays without duplicates.","Two-pointer merge. O(n+m), O(n+m) output.","// two-pointer merge, skipping duplicate output values"
+"Find missing number in an array
+
+Explanation: Find the missing value from 0..n.","XOR indices and values. O(n), O(1).",int x=n;for(int i=0;i<n;i++)x^=i^a[i];return x;
+"Maximum Consecutive Ones
+
+Explanation: Find the longest consecutive run of 1s.","Streak counter. O(n), O(1).","int cur=0,ans=0;for(int x:a){cur=x?cur+1:0;ans=max(ans,cur);}return ans;"
+"Find the number that appears once, and other numbers twice.
+
+Explanation: Find the unique element while every other element appears twice.","XOR cancellation. O(n), O(1).",int ans=0;for(int x:a)ans^=x;return ans;
+"Longest subarray with given sum K(positives)
+
+Explanation: Find the longest subarray with sum K when values are positive.","Sliding window. O(n), O(1).","int l=0,s=0,ans=0;for(int r=0;r<n;r++){s+=a[r];while(s>k)s-=a[l++];if(s==k)ans=max(ans,r-l+1);}return ans;"
+"Longest subarray with sum K (Positives + Negatives)
+
+Explanation: Find longest subarray with sum K allowing negatives.","Prefix sum + first occurrence map. O(n), O(n).","unordered_map<long long,int>mp{{0,-1}};long long s=0;int ans=0;for(int i=0;i<n;i++){s+=a[i];if(mp.count(s-k))ans=max(ans,i-mp[s-k]);if(!mp.count(s))mp[s]=i;}return ans;"
+"🔵 ALTERNATIVE APPROACH — 2Sum Problem
+
+Explanation: Find two elements whose sum is target.",Hash map gives O(n) average; sorting + two pointers is an alternative at O(n log n).,"unordered_map<int,int>mp;for(int i=0;i<n;i++){int r=t-a[i];if(mp.count(r))return {mp[r],i};mp[a[i]]=i;}return {};"
+"Sort an array of 0's 1's and 2's
+
+Explanation: Sort an array containing only 0,1,2.","Dutch National Flag. O(n), O(1).","int l=0,m=0,h=n-1;while(m<=h){if(a[m]==0)swap(a[l++],a[m++]);else if(a[m]==1)m++;else swap(a[m],a[h--]);}"
+"Majority Element (>n/2 times)
+
+Explanation: Find the element occurring more than n/2 times.","Boyer-Moore voting. O(n), O(1).","int c=0,cand=0;for(int x:a){if(c==0)cand=x;c+=(x==cand?1:-1);}return cand;"
+"Kadane's Algorithm, maximum subarray sum
+
+Explanation: Find the maximum sum of a non-empty subarray.","Kadane's algorithm. O(n), O(1).","long long cur=a[0],ans=a[0];for(int i=1;i<n;i++){cur=max((long long)a[i],cur+a[i]);ans=max(ans,cur);}return ans;"
+"subarray with maximum subarray sum (extended version)
+
+Explanation: Return the maximum-sum subarray itself.","Kadane while tracking start/end indices. O(n), O(1) extra.",// Kadane with tempStart and bestStart/bestEnd
+"Stock Buy and Sell
+
+Explanation: Maximize profit from one buy and one later sell.","Track minimum price so far. O(n), O(1).","int mn=INT_MAX,ans=0;for(int p:a){mn=min(mn,p);ans=max(ans,p-mn);}return ans;"
+"Rearrange the array in alternating positive and negative items
+
+Explanation: Place positive and negative values alternately.","Store at even/odd indices. O(n), O(n).","vector<int>ans(n);int p=0,q=1;for(int x:a)if(x>0)ans[p]=x,p+=2;else ans[q]=x,q+=2;return ans;"
+"Next Permutation
+
+Explanation: Find the next lexicographically greater permutation.","Find dip, swap successor, reverse suffix. O(n), O(1).","next_permutation(a.begin(),a.end());"
+"Leaders in an Array problem
+
+Explanation: Find elements greater than every element to their right.","Scan right-to-left with running maximum. O(n), O(n) output.","vector<int>ans;int mx=INT_MIN;for(int i=n-1;i>=0;i--)if(a[i]>mx)ans.push_back(a[i]),mx=a[i];reverse(ans.begin(),ans.end());return ans;"
+"Longest Consecutive Sequence in an Array
+
+Explanation: Find the longest consecutive integer sequence.","Hash set; start only at sequence beginnings. O(n) average, O(n).","unordered_set<int>s(a.begin(),a.end());int ans=0;for(int x:s)if(!s.count(x-1)){int y=x;while(s.count(y))y++;ans=max(ans,y-x);}return ans;"
+"Set Matrix Zeros
+
+Explanation: Set an entire row and column to zero if any cell is zero.","Use first row/column as markers. O(nm), O(1) extra.","// mark first row/column, then zero marked rows/columns"
+"Rotate Matrix by 90 degrees
+
+Explanation: Rotate an n×n matrix clockwise by 90° in-place.","Transpose then reverse every row. O(n²), O(1).","for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)swap(m[i][j],m[j][i]);for(auto& r:m)reverse(r.begin(),r.end());"
+"Print the matrix in spiral manner
+
+Explanation: Return matrix elements in clockwise spiral order.","Maintain top,bottom,left,right boundaries. O(nm), O(1) extra.","// traverse top, right, bottom, left and shrink boundaries"
+"Count subarrays with given sum
+
+Explanation: Count subarrays whose sum equals K.","Prefix-sum frequency map. O(n) average, O(n).","unordered_map<long long,int>mp{{0,1}};long long s=0;int ans=0;for(int x:a){s+=x;ans+=mp[s-k];mp[s]++;}return ans;"
+"Pascal's Triangle
+
+Explanation: Generate Pascal's triangle rows.",Each interior value is sum of two values above. O(n²) output.,"vector<vector<int>>p(n);for(int i=0;i<n;i++){p[i].resize(i+1,1);for(int j=1;j<i;j++)p[i][j]=p[i-1][j-1]+p[i-1][j];}return p;"
+"Majority Element (n/3 times)
+
+Explanation: Find all elements occurring more than n/3 times.","Boyer-Moore generalized to two candidates. O(n), O(1).","// maintain two candidates and counts, then verify"
+"3-Sum Problem
+
+Explanation: Find unique triplets summing to zero.","Sort + fixed index + two pointers. O(n²), O(1) extra excluding output.","sort(a.begin(),a.end()); // fix i, then two-pointer j,k with duplicate skipping"
+"4-Sum Problem
+
+Explanation: Find unique quadruplets summing to target.","Sort + two fixed indices + two pointers. O(n³), O(1) extra excluding output.","sort(a.begin(),a.end()); // i,j then two pointers with duplicate skipping"
+"Largest Subarray with 0 Sum
+
+Explanation: Find maximum length subarray with sum zero.","Prefix sum and first index map. O(n), O(n).","unordered_map<long long,int>mp{{0,-1}};long long s=0;int ans=0;for(int i=0;i<n;i++){s+=a[i];if(mp.count(s))ans=max(ans,i-mp[s]);else mp[s]=i;}return ans;"
+"Count number of subarrays with given xor K
+
+Explanation: Count subarrays whose XOR equals K.","Prefix XOR frequency map. O(n), O(n).","unordered_map<int,int>mp{{0,1}};int xr=0,ans=0;for(int x:a){xr^=x;ans+=mp[xr^k];mp[xr]++;}return ans;"
+"Merge Overlapping Subintervals
+
+Explanation: Merge all overlapping intervals.","Sort by start and extend the current interval. O(n log n), O(n) output.","sort(v.begin(),v.end());vector<vector<int>>ans;for(auto x:v){if(ans.empty()||x[0]>ans.back()[1])ans.push_back(x);else ans.back()[1]=max(ans.back()[1],x[1]);}return ans;"
+"Merge two sorted arrays without extra space
+
+Explanation: Merge two sorted arrays in-place while preserving sorted order.","Gap method. O((n+m)log(n+m)), O(1) extra.",// Shell-sort style gap comparisons across both arrays
+"Find the repeating and missing number
+
+Explanation: Find one repeated and one missing value in 1..n.","Use XOR partition or equations. O(n), O(1).","// XOR all indices and values, partition by a set bit, then identify repeat/missing"
+"Count Inversions
+
+Explanation: Count pairs i<j with a[i]>a[j].","Modified merge sort counts cross inversions. O(n log n), O(n).","// merge sort; when left[i]>right[j], add remaining-left count"
+"Reverse Pairs
+
+Explanation: Count pairs i<j with a[i]>2*a[j].","Modified merge sort counts valid cross pairs before merge. O(n log n), O(n).","// for each left i, advance right while a[i]>2*a[j], then merge"
+"Maximum Product Subarray
+
+Explanation: Find the maximum product of a contiguous subarray.","Track max/min product ending at each position. O(n), O(1).","long long mx=a[0],mn=a[0],ans=a[0];for(int i=1;i<n;i++){long long x=a[i],p=mx,q=mn;mx=max({x,p*x,q*x});mn=min({x,p*x,q*x});ans=max(ans,mx);}return ans;"
+"Binary Search to find X in sorted array
+
+Explanation: Find target in sorted array.","Standard binary search. O(log n), O(1).","int l=0,r=n-1;while(l<=r){int m=l+(r-l)/2;if(a[m]==x)return m;if(a[m]<x)l=m+1;else r=m-1;}return -1;"
+"Implement Lower Bound
+
+Explanation: Find first index with value >= x.","Binary search for first valid position. O(log n), O(1).","int l=0,r=n;while(l<r){int m=l+(r-l)/2;if(a[m]>=x)r=m;else l=m+1;}return l;"
+"Implement Upper Bound
+
+Explanation: Find first index with value > x.","Binary search for first strictly greater value. O(log n), O(1).","int l=0,r=n;while(l<r){int m=l+(r-l)/2;if(a[m]>x)r=m;else l=m+1;}return l;"
+"Search Insert Position
+
+Explanation: Find the index where target exists or should be inserted.","Same as lower bound. O(log n), O(1).","return lower_bound(a.begin(),a.end(),x)-a.begin();"
+"Find Floor and Ceil in a sorted array
+
+Explanation: Find greatest value <= x and smallest value >= x.","Use lower-bound position and inspect neighbors. O(log n), O(1).","int i=lower_bound(a.begin(),a.end(),x)-a.begin();int ceil=i<n?a[i]:-1;int floor=(i<n&&a[i]==x)?a[i]:(i?a[i-1]:-1);return {floor,ceil};"
+"Find the first or last occurrence of a given number in a sorted array
+
+Explanation: Find first and last positions of target.","lower_bound and upper_bound-1. O(log n), O(1).","int l=lower_bound(a.begin(),a.end(),x)-a.begin();int r=upper_bound(a.begin(),a.end(),x)-a.begin()-1;return {l,r};"
+"Count occurrences of a number in a sorted array with duplicates
+
+Explanation: Count target occurrences in sorted array.","upper_bound - lower_bound. O(log n), O(1).","return upper_bound(a.begin(),a.end(),x)-lower_bound(a.begin(),a.end(),x);"
+"Search in a rotated sorted array I
+
+Explanation: Search target in a rotated sorted array with distinct values.","Identify the sorted half and decide where target can lie. O(log n), O(1).",// binary search; one half is always sorted
+"Search in a rotated sorted array II
+
+Explanation: Search target in rotated sorted array with duplicates.","Shrink equal endpoints when halves are ambiguous; worst O(n), average O(log n).","// if a[l]==a[m]&&a[m]==a[r], l++,r--; otherwise choose sorted half"
+"Find minimum in a rotated sorted array
+
+Explanation: Find minimum in rotated sorted array with distinct values.","Compare mid with right to discard a half. O(log n), O(1).","int l=0,r=n-1;while(l<r){int m=l+(r-l)/2;if(a[m]>a[r])l=m+1;else r=m;}return a[l];"
+"Find out how many times the array has been rotated
+
+Explanation: Find the rotation count of a rotated sorted array.","Rotation count equals the index of the minimum element. O(log n), O(1).",// same binary search as minimum; return index l
+"Single Element in a Sorted Array
+
+Explanation: Find the unique element when all other elements occur twice.","Use pair-index parity to choose the half. O(log n), O(1).","int l=0,r=n-1;while(l<r){int m=l+(r-l)/2;if(m&1)m--;if(a[m]==a[m+1])l=m+2;else r=m;}return a[l];"
+"Find Peak Element
+
+Explanation: Find any element greater than its neighbors.","Binary search on the slope. O(log n), O(1).","int l=0,r=n-1;while(l<r){int m=l+(r-l)/2;if(a[m]<a[m+1])l=m+1;else r=m;}return l;"

@@ -14,6 +14,7 @@ class AutoFlashcardRequest(BaseModel):
 class FlashcardItem(BaseModel):
     title: str
     content: str
+    parent_concept: Optional[str] = None
 
 class AutoFlashcardResponse(BaseModel):
     message: str
@@ -40,3 +41,18 @@ class AIEvaluateResponse(BaseModel):
     fsrs_score: int
     feedback_markdown: str
     confidence_score: float = 1.0
+    follow_up_question: Optional[str] = None
+
+class BridgeSuggestion(BaseModel):
+    title: str
+    content: str
+    source_concept_id: int
+    target_concept_id: int
+    rationale: str
+
+class SuggestBridgesResponse(BaseModel):
+    suggestions: List[BridgeSuggestion]
+
+
+class ExamRecapResponse(BaseModel):
+    recap_markdown: str

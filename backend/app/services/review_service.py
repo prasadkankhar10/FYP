@@ -53,6 +53,8 @@ def process_review(
         response_time_sec=payload.response_time_sec,
         was_correct=payload.was_correct,
         retention_at_review=retention_at_review,
+        post_review_stability=sched.stability,
+        post_review_interval=sched.interval_days,
         reviewed_at=datetime.now(timezone.utc),
     )
     db.add(log)

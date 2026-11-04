@@ -215,14 +215,14 @@ class GraphManager:
         forward.w_final = cls.compute_w_final(forward, config)
         db.add(forward)
 
-        # Create reverse edge: target → source (same expert weight)
+        # Create reverse edge: target → source (dampened expert weight for asymmetry)
         reverse_existing = cls.get_edge(db, user_id, target_id, source_id)
         if not reverse_existing:
             reverse = ConceptEdge(
                 user_id=user_id,
                 source_concept_id=target_id,
                 target_concept_id=source_id,
-                w_expert=w_expert,
+                w_expert=cls.clamp(w_expert * 0.5),  # Asymmetrical dampening
                 w_data=0.0,
                 w_semantic=w_semantic,
             )
@@ -329,10 +329,10 @@ class GraphManager:
         edge.w_expert = cls.clamp(new_w_expert)
         cls.update_edge_w_final(edge, config)
 
-        # Keep reverse edge in sync
+        # Keep reverse edge in sync but asymmetrically dampened
         reverse = cls.get_edge(db, user_id, target_id, source_id)
         if reverse:
-            reverse.w_expert = edge.w_expert
+            reverse.w_expert = cls.clamp(edge.w_expert * 0.5)
             cls.update_edge_w_final(reverse, config)
 
         db.flush()

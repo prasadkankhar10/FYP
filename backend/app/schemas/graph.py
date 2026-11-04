@@ -54,12 +54,18 @@ class EdgeOut(BaseModel):
 class GraphNodeOut(BaseModel):
     """A concept node with its scheduling state and neighbor count."""
     concept_id: int
+    subject_id: Optional[int] = None
     title: str
+    content: Optional[str] = None
+    difficulty_level: Optional[str] = None
+    parent_concept_id: Optional[int] = None
     subject_name: Optional[str] = None
     stability: float
     difficulty: float
     retrievability: float
     interval_days: int
+    algorithm: Optional[str] = None
+    repetitions: Optional[int] = 0
     neighbor_count: int
 
     model_config = {"from_attributes": True}

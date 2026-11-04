@@ -30,6 +30,7 @@ from app.schemas.graph import (
 from app.algorithms.knowledge_graph import GraphManager
 from app.utils.auth import get_current_user
 from app.utils.exceptions import not_found, bad_request
+import json
 
 router = APIRouter()
 
@@ -171,12 +172,18 @@ def get_neighbors(
         subject = db.query(Subject).filter(Subject.id == concept.subject_id).first()
         result.append(GraphNodeOut(
             concept_id=concept.id,
+            subject_id=concept.subject_id,
             title=concept.title,
+            content=concept.content,
+            difficulty_level=concept.difficulty,
+            parent_concept_id=concept.parent_concept_id,
             subject_name=subject.name if subject else "",
             stability=sched.stability,
             difficulty=sched.difficulty_fsrs,
             retrievability=sched.retrievability,
             interval_days=sched.interval_days,
+            algorithm=sched.algorithm,
+            repetitions=sched.repetitions,
             neighbor_count=neighbor_count,
         ))
     return result
@@ -203,12 +210,18 @@ def get_full_graph(
         subject = db.query(Subject).filter(Subject.id == concept.subject_id).first()
         nodes.append(GraphNodeOut(
             concept_id=concept.id,
+            subject_id=concept.subject_id,
             title=concept.title,
+            content=concept.content,
+            difficulty_level=concept.difficulty,
+            parent_concept_id=concept.parent_concept_id,
             subject_name=subject.name if subject else "",
             stability=sched.stability if sched else 0.0,
             difficulty=sched.difficulty_fsrs if sched else 5.0,
             retrievability=sched.retrievability if sched else 1.0,
             interval_days=sched.interval_days if sched else 1,
+            algorithm=sched.algorithm if sched else "fsrs",
+            repetitions=sched.repetitions if sched else 0,
             neighbor_count=neighbor_count,
         ))
 
@@ -257,6 +270,198 @@ def get_propagation_logs(
         .all()
     )
     return logs
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Weight Tuning
+# ══════════════════════════════════════════════════════════════════════════════
+
+@router.post("/tune-weights")
+def tune_weights(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """
+    Compute a simple heuristic to adjust Knowledge Graph mixing weights (α, β, γ).
+    As the user performs more reviews, the data-driven weight (β) should increase.
+    """
+    from app.models.review_log import ReviewLog
+    from app.algorithms.knowledge_graph import WeightConfig
+
+    review_count = db.query(ReviewLog).filter(ReviewLog.user_id == current_user.id).count()
+
+    # Heuristic:
+    # Base: α=0.5, β=0.3, γ=0.2
+    # For every 100 reviews, β increases by 0.05, α decreases by 0.05 (clamped)
+    
+    beta_shift = min(0.4, (review_count // 100) * 0.05)
+    
+    new_alpha = max(0.1, 0.5 - beta_shift)
+    new_beta = min(0.7, 0.3 + beta_shift)
+    new_gamma = 1.0 - new_alpha - new_beta
+
+    new_params = {
+        "alpha": round(new_alpha, 2),
+        "beta": round(new_beta, 2),
+        "gamma": round(new_gamma, 2),
+    }
+
+    current_user.kg_params = json.dumps(new_params)
+    db.commit()
+
+    # Apply new weights to all existing edges
+    config = WeightConfig(alpha=new_alpha, beta=new_beta, gamma=new_gamma)
+    all_edges = GraphManager.get_all_edges(db, current_user.id)
+    for edge in all_edges:
+        GraphManager.update_edge_w_final(edge, config)
+    
+    db.commit()
+
+    return {
+        "success": True,
+        "message": f"KG weights tuned based on {review_count} reviews.",
+        "params": new_params
+    }
+
+
+@router.post("/connect-all")
+def connect_all_concepts(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """
+    Synthesizes and connects all concepts for the current user into a cohesive neural graph.
+    Uses semantic similarity and hierarchical topic mapping to link related concepts together.
+    """
+    concepts = db.query(Concept).filter(Concept.user_id == current_user.id).all()
+    if len(concepts) < 2:
+        return {
+            "success": True,
+            "connections_created": 0,
+            "total_edges": 0,
+            "message": "Need at least 2 concepts to build neural connections."
+        }
+
+    from app.utils.embeddings import compute_similarity
+
+    # Pre-build text representations
+    texts = {c.id: f"{c.title}: {c.content or ''}" for c in concepts}
+
+    edges_created = 0
+    for i, c1 in enumerate(concepts):
+        existing_neighbors = {e.target_concept_id for e in GraphManager.get_neighbors(db, c1.id, current_user.id)}
+        
+        # Candidate ranking based on semantic similarity + subject proximity
+        scored_candidates = []
+        for c2 in concepts:
+            if c1.id == c2.id or c2.id in existing_neighbors:
+                continue
+            sim = compute_similarity(texts[c1.id], texts[c2.id])
+            # Give a slight boost if same subject, but allow cross-subject connections
+            subject_boost = 0.15 if c1.subject_id == c2.subject_id else 0.05
+            scored_candidates.append((c2, sim + subject_boost))
+
+        scored_candidates.sort(key=lambda x: x[1], reverse=True)
+        top_candidates = [c for c, score in scored_candidates[:4]]
+
+        for c2 in top_candidates:
+            if c2.id not in existing_neighbors:
+                if GraphManager.count_outgoing(db, c1.id, current_user.id) < 5 and GraphManager.count_outgoing(db, c2.id, current_user.id) < 5:
+                    try:
+                        GraphManager.add_edge(
+                            db=db,
+                            user_id=current_user.id,
+                            source_id=c1.id,
+                            target_id=c2.id,
+                            w_expert=0.6
+                        )
+                        if not c2.parent_concept_id and c1.id != c2.id:
+                            c2.parent_concept_id = c1.id
+                        edges_created += 1
+                    except Exception:
+                        pass
+
+    db.commit()
+    total_edges = db.query(ConceptEdge).filter(ConceptEdge.user_id == current_user.id).count()
+    return {
+        "success": True,
+        "connections_created": edges_created,
+        "total_edges": total_edges,
+        "message": f"Successfully connected all concepts! Synthesized {edges_created} new neural synapses."
+    }
+
+
+@router.get("/config")
+def get_graph_config(
+    current_user: User = Depends(get_current_user),
+):
+    """Get the current graph config parameters."""
+    from app.algorithms.knowledge_graph import DEFAULT_CONFIG
+    
+    params = {
+        "alpha": DEFAULT_CONFIG.alpha,
+        "beta": DEFAULT_CONFIG.beta,
+        "gamma": DEFAULT_CONFIG.gamma,
+        "propagation_factor_fail": DEFAULT_CONFIG.propagation_factor_fail,
+        "propagation_factor_pass": DEFAULT_CONFIG.propagation_factor_pass,
+    }
+    
+    if current_user.kg_params:
+        try:
+            user_params = json.loads(current_user.kg_params)
+            params.update(user_params)
+        except json.JSONDecodeError:
+            pass
+            
+    return params
+
+
+from pydantic import BaseModel
+class ConfigUpdate(BaseModel):
+    alpha: float
+    beta: float
+    gamma: float
+    propagation_factor_fail: float
+    propagation_factor_pass: float
+
+
+@router.put("/config")
+def update_graph_config(
+    payload: ConfigUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """Manually update the graph config parameters (for research dashboard)."""
+    from app.algorithms.knowledge_graph import WeightConfig
+    
+    new_params = {
+        "alpha": payload.alpha,
+        "beta": payload.beta,
+        "gamma": payload.gamma,
+        "propagation_factor_fail": payload.propagation_factor_fail,
+        "propagation_factor_pass": payload.propagation_factor_pass,
+    }
+    
+    current_user.kg_params = json.dumps(new_params)
+    db.commit()
+
+    # Apply new weights to all existing edges
+    config = WeightConfig(
+        alpha=payload.alpha, 
+        beta=payload.beta, 
+        gamma=payload.gamma,
+        propagation_factor_fail=payload.propagation_factor_fail,
+        propagation_factor_pass=payload.propagation_factor_pass
+    )
+    
+    all_edges = GraphManager.get_all_edges(db, current_user.id)
+    for edge in all_edges:
+        GraphManager.update_edge_w_final(edge, config)
+    
+    db.commit()
+
+    return {"success": True, "params": new_params}
+
 
 
 # ══════════════════════════════════════════════════════════════════════════════

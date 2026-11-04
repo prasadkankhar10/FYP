@@ -1,0 +1,1018 @@
+{
+  "empirical": {
+    "dataset": "Empirical arsps.db Live Telemetry",
+    "sample_size": 600,
+    "SM-2": {
+      "log_loss": 1.0466,
+      "rmse_bins": 0.4172,
+      "auc": 0.5664,
+      "sample_count": 600,
+      "bin_details": [
+        {
+          "bin_idx": 0,
+          "bin_center": 0.025,
+          "count": 50,
+          "mean_pred": 0.014228691819852073,
+          "mean_true": 0.62,
+          "error": -0.6057713081801479
+        },
+        {
+          "bin_idx": 1,
+          "bin_center": 0.07500000000000001,
+          "count": 7,
+          "mean_pred": 0.07317622336621668,
+          "mean_true": 0.5714285714285714,
+          "error": -0.49825234806235474
+        },
+        {
+          "bin_idx": 2,
+          "bin_center": 0.125,
+          "count": 133,
+          "mean_pred": 0.13445840956807378,
+          "mean_true": 0.8195488721804511,
+          "error": -0.6850904626123774
+        },
+        {
+          "bin_idx": 3,
+          "bin_center": 0.17500000000000002,
+          "count": 2,
+          "mean_pred": 0.17295507564255122,
+          "mean_true": 0.5,
+          "error": -0.3270449243574488
+        },
+        {
+          "bin_idx": 4,
+          "bin_center": 0.225,
+          "count": 7,
+          "mean_pred": 0.2341921864619856,
+          "mean_true": 0.42857142857142855,
+          "error": -0.19437924210944293
+        },
+        {
+          "bin_idx": 5,
+          "bin_center": 0.275,
+          "count": 10,
+          "mean_pred": 0.27411761424928627,
+          "mean_true": 0.7,
+          "error": -0.4258823857507137
+        },
+        {
+          "bin_idx": 6,
+          "bin_center": 0.32500000000000007,
+          "count": 1,
+          "mean_pred": 0.33695250450627584,
+          "mean_true": 1.0,
+          "error": -0.6630474954937242
+        },
+        {
+          "bin_idx": 7,
+          "bin_center": 0.375,
+          "count": 2,
+          "mean_pred": 0.36787944117144233,
+          "mean_true": 1.0,
+          "error": -0.6321205588285577
+        },
+        {
+          "bin_idx": 8,
+          "bin_center": 0.42500000000000004,
+          "count": 9,
+          "mean_pred": 0.4111122905071874,
+          "mean_true": 1.0,
+          "error": -0.5888877094928127
+        },
+        {
+          "bin_idx": 9,
+          "bin_center": 0.475,
+          "count": 5,
+          "mean_pred": 0.4626543835994584,
+          "mean_true": 0.8,
+          "error": -0.33734561640054167
+        },
+        {
+          "bin_idx": 10,
+          "bin_center": 0.525,
+          "count": 85,
+          "mean_pred": 0.513468345866435,
+          "mean_true": 0.8470588235294118,
+          "error": -0.3335904776629768
+        },
+        {
+          "bin_idx": 11,
+          "bin_center": 0.5750000000000001,
+          "count": 2,
+          "mean_pred": 0.5648486020819907,
+          "mean_true": 0.5,
+          "error": 0.06484860208199072
+        },
+        {
+          "bin_idx": 12,
+          "bin_center": 0.625,
+          "count": 0,
+          "mean_pred": 0.625,
+          "mean_true": 0.625,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 13,
+          "bin_center": 0.675,
+          "count": 3,
+          "mean_pred": 0.6794550844625892,
+          "mean_true": 0.6666666666666666,
+          "error": 0.012788417795922546
+        },
+        {
+          "bin_idx": 14,
+          "bin_center": 0.7250000000000001,
+          "count": 14,
+          "mean_pred": 0.7225175414135675,
+          "mean_true": 0.9285714285714286,
+          "error": -0.2060538871578611
+        },
+        {
+          "bin_idx": 15,
+          "bin_center": 0.775,
+          "count": 14,
+          "mean_pred": 0.779344211014486,
+          "mean_true": 0.9285714285714286,
+          "error": -0.14922721755694257
+        },
+        {
+          "bin_idx": 16,
+          "bin_center": 0.8250000000000001,
+          "count": 15,
+          "mean_pred": 0.8212355991102223,
+          "mean_true": 1.0,
+          "error": -0.17876440088977774
+        },
+        {
+          "bin_idx": 17,
+          "bin_center": 0.875,
+          "count": 63,
+          "mean_pred": 0.8918693949525688,
+          "mean_true": 0.7777777777777778,
+          "error": 0.114091617174791
+        },
+        {
+          "bin_idx": 18,
+          "bin_center": 0.925,
+          "count": 52,
+          "mean_pred": 0.9329856580153408,
+          "mean_true": 0.8461538461538461,
+          "error": 0.08683181186149469
+        },
+        {
+          "bin_idx": 19,
+          "bin_center": 0.9750000000000001,
+          "count": 126,
+          "mean_pred": 0.9774566634432378,
+          "mean_true": 0.8333333333333334,
+          "error": 0.1441233301099044
+        }
+      ]
+    },
+    "Standard FSRS": {
+      "log_loss": 0.5242,
+      "rmse_bins": 0.1314,
+      "auc": 0.5642,
+      "sample_count": 600,
+      "bin_details": [
+        {
+          "bin_idx": 0,
+          "bin_center": 0.025,
+          "count": 1,
+          "mean_pred": 0.027102585988215917,
+          "mean_true": 0.0,
+          "error": 0.027102585988215917
+        },
+        {
+          "bin_idx": 1,
+          "bin_center": 0.07500000000000001,
+          "count": 1,
+          "mean_pred": 0.07289830418822484,
+          "mean_true": 1.0,
+          "error": -0.9271016958117752
+        },
+        {
+          "bin_idx": 2,
+          "bin_center": 0.125,
+          "count": 0,
+          "mean_pred": 0.125,
+          "mean_true": 0.125,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 3,
+          "bin_center": 0.17500000000000002,
+          "count": 3,
+          "mean_pred": 0.17873359701991512,
+          "mean_true": 0.0,
+          "error": 0.17873359701991512
+        },
+        {
+          "bin_idx": 4,
+          "bin_center": 0.225,
+          "count": 5,
+          "mean_pred": 0.2313207318142613,
+          "mean_true": 0.8,
+          "error": -0.5686792681857388
+        },
+        {
+          "bin_idx": 5,
+          "bin_center": 0.275,
+          "count": 0,
+          "mean_pred": 0.275,
+          "mean_true": 0.275,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 6,
+          "bin_center": 0.32500000000000007,
+          "count": 7,
+          "mean_pred": 0.33346720502386235,
+          "mean_true": 0.7142857142857143,
+          "error": -0.38081850926185196
+        },
+        {
+          "bin_idx": 7,
+          "bin_center": 0.375,
+          "count": 3,
+          "mean_pred": 0.3809361112512415,
+          "mean_true": 0.6666666666666666,
+          "error": -0.28573055541542514
+        },
+        {
+          "bin_idx": 8,
+          "bin_center": 0.42500000000000004,
+          "count": 7,
+          "mean_pred": 0.42092070787778674,
+          "mean_true": 0.7142857142857143,
+          "error": -0.29336500640792756
+        },
+        {
+          "bin_idx": 9,
+          "bin_center": 0.475,
+          "count": 7,
+          "mean_pred": 0.4765559663482695,
+          "mean_true": 0.5714285714285714,
+          "error": -0.09487260508030188
+        },
+        {
+          "bin_idx": 10,
+          "bin_center": 0.525,
+          "count": 6,
+          "mean_pred": 0.5271641687878462,
+          "mean_true": 1.0,
+          "error": -0.4728358312121538
+        },
+        {
+          "bin_idx": 11,
+          "bin_center": 0.5750000000000001,
+          "count": 20,
+          "mean_pred": 0.574055386998513,
+          "mean_true": 0.75,
+          "error": -0.175944613001487
+        },
+        {
+          "bin_idx": 12,
+          "bin_center": 0.625,
+          "count": 41,
+          "mean_pred": 0.6226494228898324,
+          "mean_true": 0.7073170731707317,
+          "error": -0.08466765028089929
+        },
+        {
+          "bin_idx": 13,
+          "bin_center": 0.675,
+          "count": 25,
+          "mean_pred": 0.676501172964299,
+          "mean_true": 0.84,
+          "error": -0.16349882703570096
+        },
+        {
+          "bin_idx": 14,
+          "bin_center": 0.7250000000000001,
+          "count": 32,
+          "mean_pred": 0.7266192385498901,
+          "mean_true": 0.84375,
+          "error": -0.11713076145010992
+        },
+        {
+          "bin_idx": 15,
+          "bin_center": 0.775,
+          "count": 52,
+          "mean_pred": 0.7763754281108082,
+          "mean_true": 0.8461538461538461,
+          "error": -0.06977841804303797
+        },
+        {
+          "bin_idx": 16,
+          "bin_center": 0.8250000000000001,
+          "count": 43,
+          "mean_pred": 0.8265889640012927,
+          "mean_true": 0.7674418604651163,
+          "error": 0.05914710353617636
+        },
+        {
+          "bin_idx": 17,
+          "bin_center": 0.875,
+          "count": 83,
+          "mean_pred": 0.8786011009526566,
+          "mean_true": 0.8313253012048193,
+          "error": 0.047275799747837355
+        },
+        {
+          "bin_idx": 18,
+          "bin_center": 0.925,
+          "count": 227,
+          "mean_pred": 0.9099221554438444,
+          "mean_true": 0.8281938325991189,
+          "error": 0.08172832284472542
+        },
+        {
+          "bin_idx": 19,
+          "bin_center": 0.9750000000000001,
+          "count": 37,
+          "mean_pred": 0.9688498225076395,
+          "mean_true": 0.8648648648648649,
+          "error": 0.1039849576427746
+        }
+      ]
+    },
+    "Multi-Concept FSRS (SynapseFlow)": {
+      "log_loss": 0.5062,
+      "rmse_bins": 0.1059,
+      "auc": 0.5783,
+      "sample_count": 600,
+      "bin_details": [
+        {
+          "bin_idx": 0,
+          "bin_center": 0.025,
+          "count": 0,
+          "mean_pred": 0.025,
+          "mean_true": 0.025,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 1,
+          "bin_center": 0.07500000000000001,
+          "count": 1,
+          "mean_pred": 0.06266951086729115,
+          "mean_true": 0.0,
+          "error": 0.06266951086729115
+        },
+        {
+          "bin_idx": 2,
+          "bin_center": 0.125,
+          "count": 0,
+          "mean_pred": 0.125,
+          "mean_true": 0.125,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 3,
+          "bin_center": 0.17500000000000002,
+          "count": 3,
+          "mean_pred": 0.1801657108419553,
+          "mean_true": 0.3333333333333333,
+          "error": -0.15316762249137802
+        },
+        {
+          "bin_idx": 4,
+          "bin_center": 0.225,
+          "count": 4,
+          "mean_pred": 0.2241485867172557,
+          "mean_true": 0.75,
+          "error": -0.5258514132827443
+        },
+        {
+          "bin_idx": 5,
+          "bin_center": 0.275,
+          "count": 1,
+          "mean_pred": 0.28694387644473424,
+          "mean_true": 0.0,
+          "error": 0.28694387644473424
+        },
+        {
+          "bin_idx": 6,
+          "bin_center": 0.32500000000000007,
+          "count": 3,
+          "mean_pred": 0.3369194271985316,
+          "mean_true": 0.6666666666666666,
+          "error": -0.32974723946813506
+        },
+        {
+          "bin_idx": 7,
+          "bin_center": 0.375,
+          "count": 3,
+          "mean_pred": 0.378429858349026,
+          "mean_true": 0.3333333333333333,
+          "error": 0.04509652501569267
+        },
+        {
+          "bin_idx": 8,
+          "bin_center": 0.42500000000000004,
+          "count": 7,
+          "mean_pred": 0.4214853534168771,
+          "mean_true": 0.7142857142857143,
+          "error": -0.2928003608688372
+        },
+        {
+          "bin_idx": 9,
+          "bin_center": 0.475,
+          "count": 4,
+          "mean_pred": 0.47670239893819155,
+          "mean_true": 0.75,
+          "error": -0.27329760106180845
+        },
+        {
+          "bin_idx": 10,
+          "bin_center": 0.525,
+          "count": 8,
+          "mean_pred": 0.5248573630910729,
+          "mean_true": 0.625,
+          "error": -0.10014263690892711
+        },
+        {
+          "bin_idx": 11,
+          "bin_center": 0.5750000000000001,
+          "count": 21,
+          "mean_pred": 0.5746866478829172,
+          "mean_true": 0.7619047619047619,
+          "error": -0.18721811402184463
+        },
+        {
+          "bin_idx": 12,
+          "bin_center": 0.625,
+          "count": 26,
+          "mean_pred": 0.6251024694604564,
+          "mean_true": 0.6538461538461539,
+          "error": -0.02874368438569741
+        },
+        {
+          "bin_idx": 13,
+          "bin_center": 0.675,
+          "count": 14,
+          "mean_pred": 0.6723941786842725,
+          "mean_true": 0.8571428571428571,
+          "error": -0.18474867845858456
+        },
+        {
+          "bin_idx": 14,
+          "bin_center": 0.7250000000000001,
+          "count": 34,
+          "mean_pred": 0.7268828975108839,
+          "mean_true": 0.8823529411764706,
+          "error": -0.1554700436655867
+        },
+        {
+          "bin_idx": 15,
+          "bin_center": 0.775,
+          "count": 110,
+          "mean_pred": 0.7849074991889143,
+          "mean_true": 0.8272727272727273,
+          "error": -0.042365228083812934
+        },
+        {
+          "bin_idx": 16,
+          "bin_center": 0.8250000000000001,
+          "count": 72,
+          "mean_pred": 0.819839332516209,
+          "mean_true": 0.7361111111111112,
+          "error": 0.08372822140509784
+        },
+        {
+          "bin_idx": 17,
+          "bin_center": 0.875,
+          "count": 84,
+          "mean_pred": 0.8832477183111388,
+          "mean_true": 0.8452380952380952,
+          "error": 0.038009623073043564
+        },
+        {
+          "bin_idx": 18,
+          "bin_center": 0.925,
+          "count": 151,
+          "mean_pred": 0.918696610660012,
+          "mean_true": 0.847682119205298,
+          "error": 0.07101449145471395
+        },
+        {
+          "bin_idx": 19,
+          "bin_center": 0.9750000000000001,
+          "count": 54,
+          "mean_pred": 0.9674127897727265,
+          "mean_true": 0.8703703703703703,
+          "error": 0.09704241940235614
+        }
+      ]
+    }
+  },
+  "curriculum": {
+    "dataset": "Controlled 90-Day Multi-Concept Curriculum",
+    "sample_size": 1065,
+    "SM-2": {
+      "log_loss": 0.4559,
+      "rmse_bins": 0.2811,
+      "auc": 0.5107,
+      "sample_count": 1065,
+      "bin_details": [
+        {
+          "bin_idx": 0,
+          "bin_center": 0.025,
+          "count": 9,
+          "mean_pred": 0.019401171361049057,
+          "mean_true": 0.8888888888888888,
+          "error": -0.8694877175278398
+        },
+        {
+          "bin_idx": 1,
+          "bin_center": 0.07500000000000001,
+          "count": 7,
+          "mean_pred": 0.07195357668724835,
+          "mean_true": 1.0,
+          "error": -0.9280464233127517
+        },
+        {
+          "bin_idx": 2,
+          "bin_center": 0.125,
+          "count": 9,
+          "mean_pred": 0.13468159485815223,
+          "mean_true": 1.0,
+          "error": -0.8653184051418478
+        },
+        {
+          "bin_idx": 3,
+          "bin_center": 0.17500000000000002,
+          "count": 0,
+          "mean_pred": 0.17500000000000002,
+          "mean_true": 0.17500000000000002,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 4,
+          "bin_center": 0.225,
+          "count": 6,
+          "mean_pred": 0.22760875125416344,
+          "mean_true": 0.8333333333333334,
+          "error": -0.6057245820791699
+        },
+        {
+          "bin_idx": 5,
+          "bin_center": 0.275,
+          "count": 26,
+          "mean_pred": 0.26414491865143735,
+          "mean_true": 1.0,
+          "error": -0.7358550813485627
+        },
+        {
+          "bin_idx": 6,
+          "bin_center": 0.32500000000000007,
+          "count": 7,
+          "mean_pred": 0.3321040095344931,
+          "mean_true": 0.8571428571428571,
+          "error": -0.5250388476083641
+        },
+        {
+          "bin_idx": 7,
+          "bin_center": 0.375,
+          "count": 4,
+          "mean_pred": 0.37645155092138827,
+          "mean_true": 1.0,
+          "error": -0.6235484490786117
+        },
+        {
+          "bin_idx": 8,
+          "bin_center": 0.42500000000000004,
+          "count": 11,
+          "mean_pred": 0.4214348963712448,
+          "mean_true": 1.0,
+          "error": -0.5785651036287551
+        },
+        {
+          "bin_idx": 9,
+          "bin_center": 0.475,
+          "count": 6,
+          "mean_pred": 0.48091156402259455,
+          "mean_true": 1.0,
+          "error": -0.5190884359774055
+        },
+        {
+          "bin_idx": 10,
+          "bin_center": 0.525,
+          "count": 161,
+          "mean_pred": 0.5153986292844929,
+          "mean_true": 0.9316770186335404,
+          "error": -0.4162783893490475
+        },
+        {
+          "bin_idx": 11,
+          "bin_center": 0.5750000000000001,
+          "count": 18,
+          "mean_pred": 0.5783804889543137,
+          "mean_true": 1.0,
+          "error": -0.4216195110456863
+        },
+        {
+          "bin_idx": 12,
+          "bin_center": 0.625,
+          "count": 64,
+          "mean_pred": 0.6379521531053427,
+          "mean_true": 0.90625,
+          "error": -0.2682978468946573
+        },
+        {
+          "bin_idx": 13,
+          "bin_center": 0.675,
+          "count": 7,
+          "mean_pred": 0.6747565678864115,
+          "mean_true": 1.0,
+          "error": -0.3252434321135885
+        },
+        {
+          "bin_idx": 14,
+          "bin_center": 0.7250000000000001,
+          "count": 33,
+          "mean_pred": 0.7233344971447533,
+          "mean_true": 0.9090909090909091,
+          "error": -0.18575641194615578
+        },
+        {
+          "bin_idx": 15,
+          "bin_center": 0.775,
+          "count": 28,
+          "mean_pred": 0.7766807132058899,
+          "mean_true": 0.8928571428571429,
+          "error": -0.11617642965125297
+        },
+        {
+          "bin_idx": 16,
+          "bin_center": 0.8250000000000001,
+          "count": 65,
+          "mean_pred": 0.8211415718923166,
+          "mean_true": 0.9384615384615385,
+          "error": -0.11731996656922183
+        },
+        {
+          "bin_idx": 17,
+          "bin_center": 0.875,
+          "count": 93,
+          "mean_pred": 0.8806644445892057,
+          "mean_true": 0.9139784946236559,
+          "error": -0.033314050034450204
+        },
+        {
+          "bin_idx": 18,
+          "bin_center": 0.925,
+          "count": 96,
+          "mean_pred": 0.9266369698159608,
+          "mean_true": 0.9270833333333334,
+          "error": -0.0004463635173725944
+        },
+        {
+          "bin_idx": 19,
+          "bin_center": 0.9750000000000001,
+          "count": 415,
+          "mean_pred": 0.9839477411727684,
+          "mean_true": 0.946987951807229,
+          "error": 0.03695978936553945
+        }
+      ]
+    },
+    "Standard FSRS": {
+      "log_loss": 0.2667,
+      "rmse_bins": 0.0414,
+      "auc": 0.58,
+      "sample_count": 1065,
+      "bin_details": [
+        {
+          "bin_idx": 0,
+          "bin_center": 0.025,
+          "count": 0,
+          "mean_pred": 0.025,
+          "mean_true": 0.025,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 1,
+          "bin_center": 0.07500000000000001,
+          "count": 0,
+          "mean_pred": 0.07500000000000001,
+          "mean_true": 0.07500000000000001,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 2,
+          "bin_center": 0.125,
+          "count": 0,
+          "mean_pred": 0.125,
+          "mean_true": 0.125,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 3,
+          "bin_center": 0.17500000000000002,
+          "count": 0,
+          "mean_pred": 0.17500000000000002,
+          "mean_true": 0.17500000000000002,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 4,
+          "bin_center": 0.225,
+          "count": 0,
+          "mean_pred": 0.225,
+          "mean_true": 0.225,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 5,
+          "bin_center": 0.275,
+          "count": 0,
+          "mean_pred": 0.275,
+          "mean_true": 0.275,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 6,
+          "bin_center": 0.32500000000000007,
+          "count": 0,
+          "mean_pred": 0.32500000000000007,
+          "mean_true": 0.32500000000000007,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 7,
+          "bin_center": 0.375,
+          "count": 0,
+          "mean_pred": 0.375,
+          "mean_true": 0.375,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 8,
+          "bin_center": 0.42500000000000004,
+          "count": 0,
+          "mean_pred": 0.42500000000000004,
+          "mean_true": 0.42500000000000004,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 9,
+          "bin_center": 0.475,
+          "count": 0,
+          "mean_pred": 0.475,
+          "mean_true": 0.475,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 10,
+          "bin_center": 0.525,
+          "count": 0,
+          "mean_pred": 0.525,
+          "mean_true": 0.525,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 11,
+          "bin_center": 0.5750000000000001,
+          "count": 1,
+          "mean_pred": 0.5916768924447775,
+          "mean_true": 1.0,
+          "error": -0.4083231075552225
+        },
+        {
+          "bin_idx": 12,
+          "bin_center": 0.625,
+          "count": 0,
+          "mean_pred": 0.625,
+          "mean_true": 0.625,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 13,
+          "bin_center": 0.675,
+          "count": 0,
+          "mean_pred": 0.675,
+          "mean_true": 0.675,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 14,
+          "bin_center": 0.7250000000000001,
+          "count": 5,
+          "mean_pred": 0.724458803561056,
+          "mean_true": 1.0,
+          "error": -0.27554119643894404
+        },
+        {
+          "bin_idx": 15,
+          "bin_center": 0.775,
+          "count": 8,
+          "mean_pred": 0.7826752600785774,
+          "mean_true": 1.0,
+          "error": -0.21732473992142265
+        },
+        {
+          "bin_idx": 16,
+          "bin_center": 0.8250000000000001,
+          "count": 23,
+          "mean_pred": 0.818887197647932,
+          "mean_true": 0.8260869565217391,
+          "error": -0.007199758873807083
+        },
+        {
+          "bin_idx": 17,
+          "bin_center": 0.875,
+          "count": 261,
+          "mean_pred": 0.890853354668716,
+          "mean_true": 0.9233716475095786,
+          "error": -0.032518292840862606
+        },
+        {
+          "bin_idx": 18,
+          "bin_center": 0.925,
+          "count": 202,
+          "mean_pred": 0.9149322330440058,
+          "mean_true": 0.9158415841584159,
+          "error": -0.0009093511144100397
+        },
+        {
+          "bin_idx": 19,
+          "bin_center": 0.9750000000000001,
+          "count": 565,
+          "mean_pred": 0.9871907616373796,
+          "mean_true": 0.9539823008849557,
+          "error": 0.033208460752423896
+        }
+      ]
+    },
+    "Multi-Concept FSRS (SynapseFlow)": {
+      "log_loss": 0.2553,
+      "rmse_bins": 0.0486,
+      "auc": 0.6325,
+      "sample_count": 1065,
+      "bin_details": [
+        {
+          "bin_idx": 0,
+          "bin_center": 0.025,
+          "count": 0,
+          "mean_pred": 0.025,
+          "mean_true": 0.025,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 1,
+          "bin_center": 0.07500000000000001,
+          "count": 0,
+          "mean_pred": 0.07500000000000001,
+          "mean_true": 0.07500000000000001,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 2,
+          "bin_center": 0.125,
+          "count": 1,
+          "mean_pred": 0.12413266773308074,
+          "mean_true": 0.0,
+          "error": 0.12413266773308074
+        },
+        {
+          "bin_idx": 3,
+          "bin_center": 0.17500000000000002,
+          "count": 0,
+          "mean_pred": 0.17500000000000002,
+          "mean_true": 0.17500000000000002,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 4,
+          "bin_center": 0.225,
+          "count": 2,
+          "mean_pred": 0.23867228661749212,
+          "mean_true": 0.0,
+          "error": 0.23867228661749212
+        },
+        {
+          "bin_idx": 5,
+          "bin_center": 0.275,
+          "count": 0,
+          "mean_pred": 0.275,
+          "mean_true": 0.275,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 6,
+          "bin_center": 0.32500000000000007,
+          "count": 0,
+          "mean_pred": 0.32500000000000007,
+          "mean_true": 0.32500000000000007,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 7,
+          "bin_center": 0.375,
+          "count": 1,
+          "mean_pred": 0.3510911288573116,
+          "mean_true": 1.0,
+          "error": -0.6489088711426885
+        },
+        {
+          "bin_idx": 8,
+          "bin_center": 0.42500000000000004,
+          "count": 1,
+          "mean_pred": 0.4344233504537464,
+          "mean_true": 0.0,
+          "error": 0.4344233504537464
+        },
+        {
+          "bin_idx": 9,
+          "bin_center": 0.475,
+          "count": 0,
+          "mean_pred": 0.475,
+          "mean_true": 0.475,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 10,
+          "bin_center": 0.525,
+          "count": 2,
+          "mean_pred": 0.5454545454545455,
+          "mean_true": 0.0,
+          "error": 0.5454545454545455
+        },
+        {
+          "bin_idx": 11,
+          "bin_center": 0.5750000000000001,
+          "count": 0,
+          "mean_pred": 0.5750000000000001,
+          "mean_true": 0.5750000000000001,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 12,
+          "bin_center": 0.625,
+          "count": 1,
+          "mean_pred": 0.6304615690806922,
+          "mean_true": 1.0,
+          "error": -0.3695384309193078
+        },
+        {
+          "bin_idx": 13,
+          "bin_center": 0.675,
+          "count": 0,
+          "mean_pred": 0.675,
+          "mean_true": 0.675,
+          "error": 0.0
+        },
+        {
+          "bin_idx": 14,
+          "bin_center": 0.7250000000000001,
+          "count": 1,
+          "mean_pred": 0.7214345175104455,
+          "mean_true": 1.0,
+          "error": -0.2785654824895545
+        },
+        {
+          "bin_idx": 15,
+          "bin_center": 0.775,
+          "count": 5,
+          "mean_pred": 0.7823700499921903,
+          "mean_true": 1.0,
+          "error": -0.2176299500078097
+        },
+        {
+          "bin_idx": 16,
+          "bin_center": 0.8250000000000001,
+          "count": 9,
+          "mean_pred": 0.8203699546592682,
+          "mean_true": 0.7777777777777778,
+          "error": 0.04259217688149042
+        },
+        {
+          "bin_idx": 17,
+          "bin_center": 0.875,
+          "count": 75,
+          "mean_pred": 0.8886816188667446,
+          "mean_true": 0.92,
+          "error": -0.03131838113325547
+        },
+        {
+          "bin_idx": 18,
+          "bin_center": 0.925,
+          "count": 357,
+          "mean_pred": 0.9194153110033093,
+          "mean_true": 0.927170868347339,
+          "error": -0.007755557344029662
+        },
+        {
+          "bin_idx": 19,
+          "bin_center": 0.9750000000000001,
+          "count": 610,
+          "mean_pred": 0.9877054760958106,
+          "mean_true": 0.9557377049180328,
+          "error": 0.031967771177777826
+        }
+      ]
+    }
+  }
+}

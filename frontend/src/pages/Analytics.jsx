@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
-import { Loader2, TrendingUp, Target, CalendarDays, BrainCircuit, AlertTriangle, Play } from 'lucide-react';
+import { ComposedChart, BarChart, Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, LineChart } from 'recharts';
+import { Loader2, TrendingUp, Target, CalendarDays, BrainCircuit, AlertTriangle, Play, Zap, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api';
 
@@ -104,63 +104,72 @@ const Analytics = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {/* Comparison Chart */}
-        <div className="glass p-8 rounded-3xl border border-white/10 shadow-2xl">
-          <h2 className="text-2xl font-bold mb-6">Algorithm Efficiency</h2>
+        <div className="glass-card p-10 rounded-[2.5rem] border shadow-2xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 blur-3xl group-hover:bg-primary/10 transition-all"></div>
+          
+          <div className="flex justify-between items-start mb-8 relative z-10">
+            <div>
+              <h2 className="text-2xl font-bold mb-1">Algorithm Efficiency</h2>
+              <p className="text-xs text-muted-foreground uppercase font-bold tracking-widest">Memory vs. Effort ROI</p>
+            </div>
+            <div className="p-2 bg-primary/10 rounded-xl text-primary"><TrendingUp size={20} /></div>
+          </div>
+
           {compareData.length === 0 ? (
-            <p className="text-slate-500 text-center py-12">Not enough review data to compare algorithms yet.</p>
+            <p className="text-slate-500 text-center py-20">Not enough review data to compare engines yet.</p>
           ) : (
-            <div className="h-80">
+            <div className="h-80 relative z-10">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={compareData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#ffffff1a" vertical={false} />
-                  <XAxis dataKey="name" stroke="#94a3b8" tick={{fill: '#94a3b8'}} axisLine={false} tickLine={false} />
-                  <YAxis yAxisId="left" orientation="left" stroke="#94a3b8" tick={{fill: '#94a3b8'}} axisLine={false} tickLine={false} />
-                  <YAxis yAxisId="right" orientation="right" stroke="#94a3b8" tick={{fill: '#94a3b8'}} axisLine={false} tickLine={false} />
-                  <Tooltip 
-                    contentStyle={{ backgroundColor: '#0f172a', borderColor: '#ffffff2a', borderRadius: '16px' }}
-                    itemStyle={{ color: '#fff' }}
+                <ComposedChart data={compareData} margin={{ top: 20, right: 0, left: -20, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#ffffff0a" vertical={false} />
+                  <XAxis 
+                    dataKey="name" 
+                    stroke="#94a3b8" 
+                    tick={{fill: '#64748b', fontSize: 10, fontWeight: 'bold'}} 
+                    axisLine={false} 
+                    tickLine={false} 
                   />
-                  <Legend wrapperStyle={{ paddingTop: '20px' }}/>
-                  <Bar yAxisId="left" dataKey="Accuracy" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
-                  <Bar yAxisId="right" dataKey="Interval (Days)" fill="#ec4899" radius={[4, 4, 0, 0]} />
-                </BarChart>
+                  <YAxis 
+                    yAxisId="left" 
+                    stroke="#8b5cf6" 
+                    tick={{fill: '#8b5cf6', fontSize: 10}} 
+                    axisLine={false} 
+                    tickLine={false} 
+                    label={{ value: 'Retention %', angle: -90, position: 'insideLeft', fill: '#8b5cf6', fontSize: 10, fontWeight: 'bold' }}
+                  />
+                  <YAxis 
+                    yAxisId="right" 
+                    orientation="right" 
+                    stroke="#10b981" 
+                    tick={{fill: '#10b981', fontSize: 10}} 
+                    axisLine={false} 
+                    tickLine={false} 
+                    label={{ value: 'Interval (Days)', angle: 90, position: 'insideRight', fill: '#10b981', fontSize: 10, fontWeight: 'bold' }}
+                  />
+                  <Tooltip 
+                    contentStyle={{ backgroundColor: 'hsl(var(--background))', borderColor: 'rgba(255,255,255,0.1)', borderRadius: '1.5rem', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1)' }}
+                    itemStyle={{ fontSize: '12px', fontWeight: 'bold' }}
+                  />
+                  <Legend verticalAlign="top" align="right" iconType="circle" wrapperStyle={{ paddingBottom: '20px', fontSize: '10px', fontWeight: 'bold', textTransform: 'uppercase' }}/>
+                  <Bar yAxisId="left" dataKey="Accuracy" name="Retention" fill="#8b5cf6" radius={[8, 8, 0, 0]} barSize={40} />
+                  <Line yAxisId="right" type="monotone" dataKey="Interval (Days)" name="Efficiency" stroke="#10b981" strokeWidth={4} dot={{ fill: '#10b981', r: 6, strokeWidth: 2, stroke: '#fff' }} activeDot={{ r: 8 }} />
+                </ComposedChart>
               </ResponsiveContainer>
             </div>
           )}
           
-          {/* Predictive Performance Metrics Table */}
-          {compareData.length > 0 && compareData.some(d => d.rmse !== null) && (
-            <div className="mt-8 border-t border-white/10 pt-6">
-              <h3 className="text-lg font-semibold text-white mb-4">Predictive Accuracy (Log-Loss & RMSE)</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-white/10 text-slate-400 text-sm">
-                      <th className="pb-2 font-medium">Algorithm</th>
-                      <th className="pb-2 font-medium">RMSE ↓</th>
-                      <th className="pb-2 font-medium">Log-Loss ↓</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {compareData.map((d) => (
-                      <tr key={d.name} className="border-b border-white/5 last:border-0">
-                        <td className="py-3 font-mono text-slate-200">{d.name}</td>
-                        <td className="py-3 text-slate-300">
-                          {d.rmse !== null ? d.rmse.toFixed(4) : '-'}
-                        </td>
-                        <td className="py-3 text-slate-300">
-                          {d.log_loss !== null ? d.log_loss.toFixed(4) : '-'}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="text-xs text-slate-400 mt-3">
-                * Lower values indicate the algorithm's predictions closer match reality (true memory retention).
-              </p>
-            </div>
-          )}
+          <div className="mt-8 grid grid-cols-2 gap-4 relative z-10">
+             <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
+                <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">Target Retention</p>
+                <p className="text-xl font-bold text-primary">90.0%</p>
+             </div>
+             <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
+                <p className="text-[10px] uppercase font-bold text-muted-foreground mb-1">Max Efficiency</p>
+                <p className="text-xl font-bold text-success">
+                  {compareData.length > 0 ? Math.max(...compareData.map(d => d['Interval (Days)'])).toFixed(1) : '0.0'}d
+                </p>
+             </div>
+          </div>
         </div>
 
         {/* Algorithm Distribution */}
@@ -247,7 +256,53 @@ const Analytics = () => {
           <p className="text-center text-sm text-slate-400 mt-4">Average response time (speed of recall) over time.</p>
         </div>
 
-        {/* Daily Activity */}
+        {/* Daily Activity Heatmap */}
+        <div className="glass p-8 rounded-3xl border border-white/10 shadow-2xl lg:col-span-2">
+          <h2 className="text-2xl font-bold mb-6">Knowledge Consistency (90-Day Heatmap)</h2>
+          {activityData.length === 0 ? (
+            <p className="text-slate-500 text-center py-12">No recent review activity.</p>
+          ) : (
+            <div className="flex flex-wrap gap-1 justify-center md:justify-start">
+              {Array.from({ length: 90 }).map((_, i) => {
+                const date = new Date();
+                date.setDate(date.getDate() - (89 - i));
+                const dateStr = date.toISOString().split('T')[0];
+                const activity = activityData.find(a => a.date === dateStr);
+                const count = activity ? activity.count : 0;
+                
+                let bgColor = 'bg-slate-800/50';
+                if (count > 0) bgColor = 'bg-purple-900';
+                if (count > 3) bgColor = 'bg-purple-700';
+                if (count > 7) bgColor = 'bg-purple-500';
+                if (count > 12) bgColor = 'bg-purple-300';
+
+                return (
+                  <div 
+                    key={dateStr}
+                    title={`${dateStr}: ${count} reviews`}
+                    className={`w-3 h-3 rounded-sm ${bgColor} transition-colors hover:ring-1 hover:ring-white/40 cursor-help`}
+                  />
+                );
+              })}
+            </div>
+          )}
+          <div className="flex justify-between mt-4 text-[10px] text-slate-500 px-2 uppercase tracking-widest font-bold">
+            <span>90 Days Ago</span>
+            <div className="flex items-center gap-2">
+              <span>Less</span>
+              <div className="flex gap-1">
+                <div className="w-2 h-2 rounded-sm bg-slate-800/50"></div>
+                <div className="w-2 h-2 rounded-sm bg-purple-900"></div>
+                <div className="w-2 h-2 rounded-sm bg-purple-500"></div>
+                <div className="w-2 h-2 rounded-sm bg-purple-300"></div>
+              </div>
+              <span>More</span>
+            </div>
+            <span>Today</span>
+          </div>
+        </div>
+
+        {/* Daily Activity Chart */}
         <div className="glass p-8 rounded-3xl border border-white/10 shadow-2xl lg:col-span-2">
           <h2 className="text-2xl font-bold mb-6">Daily Review Volume (Last 14 Days)</h2>
           {activityData.length === 0 ? (

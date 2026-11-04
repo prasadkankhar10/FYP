@@ -247,7 +247,7 @@ def run_simulation():
     Simulate 20 review sessions and compare standard FSRS vs Graph-aware FSRS.
     """
     print("=" * 80)
-    print("  MULTI-CONCEPT FSRS — KNOWLEDGE GRAPH SIMULATION")
+    print("  MULTI-CONCEPT FSRS - KNOWLEDGE GRAPH SIMULATION")
     print("=" * 80)
 
     # Build graph
@@ -270,8 +270,8 @@ def run_simulation():
         # Session 2: Mixed performance
         (6, 1, 4),   # Algebra: Easy
         (7, 2, 3),   # Linear Eq: Good
-        (8, 3, 1),   # Quadratic Eq: FAILED ← should propagate to neighbors
-        (9, 5, 1),   # Quadratic Formula: FAILED ← co-failure with #3
+        (8, 3, 1),   # Quadratic Eq: FAILED (should propagate to neighbors)
+        (9, 5, 1),   # Quadratic Formula: FAILED (co-failure with #3)
         (10, 4, 3),  # Systems: Good
         # Session 3: Recovery attempt
         (11, 3, 2),  # Quadratic Eq: Hard (no propagation)
@@ -288,9 +288,9 @@ def run_simulation():
         (20, 5, 3),  # Quadratic Formula: Good
     ]
 
-    print("\n📊 REVIEW LOG:")
+    print("\n[REVIEW LOG]")
     print("-" * 80)
-    print(f"{'Step':>4} | {'Concept':25s} | {'Rating':6s} | {'S (Base)':>9s} | {'S (Graph)':>10s} | {'ΔS':>8s}")
+    print(f"{'Step':>4} | {'Concept':25s} | {'Rating':6s} | {'S (Base)':>9s} | {'S (Graph)':>10s} | {'Delta_S':>8s}")
     print("-" * 80)
 
     for step, cid, rating in reviews:
@@ -364,12 +364,12 @@ def run_simulation():
     print("  PROPAGATION EVENTS")
     print("=" * 80)
     if events:
-        print(f"{'Step':>4} | {'Source':20s} → {'Target':20s} | {'Type':22s} | {'ΔS':>10s} | {'w_final':>8s}")
+        print(f"{'Step':>4} | {'Source':20s} -> {'Target':20s} | {'Type':22s} | {'Delta_S':>10s} | {'w_final':>8s}")
         print("-" * 95)
         for ev in events:
             src_name = concepts[ev.source_id].title
             tgt_name = concepts[ev.target_id].title
-            print(f"{ev.step:4d} | {src_name:20s} → {tgt_name:20s} | {ev.event_type:22s} | {ev.delta_stability:+10.6f} | {ev.w_final_used:8.4f}")
+            print(f"{ev.step:4d} | {src_name:20s} -> {tgt_name:20s} | {ev.event_type:22s} | {ev.delta_stability:+10.6f} | {ev.w_final_used:8.4f}")
     else:
         print("  No propagation events occurred.")
 
@@ -383,7 +383,7 @@ def run_simulation():
     for edge in edges:
         src_name = concepts[edge.source_id].title
         tgt_name = concepts[edge.target_id].title
-        label = f"{src_name} → {tgt_name}"
+        label = f"{src_name} -> {tgt_name}"
         print(f"{label:40s} | {edge.w_expert:8.4f} | {edge.w_data:7.4f} | {edge.w_final:8.4f} | {edge.co_review_count:7d} | {edge.co_fail_count:8d}")
 
     print("\n" + "=" * 80)

@@ -28,6 +28,10 @@ class ReviewLog(Base):
     # Retrievability (R) value at the moment of review — key for FSRS analytics
     retention_at_review = Column(Float, nullable=True)
 
+    # Stability and Interval assigned AFTER this review
+    post_review_stability = Column(Float, nullable=True)
+    post_review_interval = Column(Integer, nullable=True)
+
     reviewed_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     # Relationships

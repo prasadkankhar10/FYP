@@ -28,7 +28,7 @@ from app.algorithms.session_tracker import SessionTracker
 from app.algorithms.knowledge_graph import DEFAULT_CONFIG
 
 
-def calculate(sched: SchedulingData, rating: int, concept=None, db: Session = None) -> dict:
+def calculate(sched: SchedulingData, rating: int, concept=None, db: Session = None, w_custom: list = None) -> dict:
     """
     Execute Multi-Concept FSRS: standard FSRS + graph propagation + scheduling adjustment.
 
@@ -37,6 +37,7 @@ def calculate(sched: SchedulingData, rating: int, concept=None, db: Session = No
         rating: Review rating (1=Again, 2=Hard, 3=Good, 4=Easy)
         concept: The Concept ORM object (needed for graph lookups)
         db: Database session (needed for graph operations)
+        w_custom: Optional custom FSRS weights
 
     Returns:
         Dict of updated scheduling fields, same shape as standard FSRS output.
@@ -45,7 +46,7 @@ def calculate(sched: SchedulingData, rating: int, concept=None, db: Session = No
     # Step 1: Run standard FSRS math (NEVER modified)
     # ──────────────────────────────────────────────────────────────────────────
     old_stability = sched.stability
-    updated = fsrs_calculate(sched, rating)
+    updated = fsrs_calculate(sched, rating, w_custom=w_custom)
     new_stability = updated["stability"]
 
     # ──────────────────────────────────────────────────────────────────────────
@@ -77,14 +78,14 @@ def calculate(sched: SchedulingData, rating: int, concept=None, db: Session = No
                 config=DEFAULT_CONFIG,
             )
 
-            # Step 5: Adjust interval based on neighbor health
+            # Step 5: Adjust scheduling (Interval & Difficulty) based on neighbor health
             avg_neighbor_R = PropagationEngine.get_avg_neighbor_retrievability(
                 db=db,
                 concept_id=concept.id,
                 user_id=sched.user_id,
                 config=DEFAULT_CONFIG,
             )
-            updated = _adjust_interval_for_graph_context(updated, avg_neighbor_R)
+            updated = _adjust_scheduling_for_graph_context(updated, avg_neighbor_R)
 
         except Exception as e:
             # Graph operations should NEVER break the core FSRS update.
@@ -94,47 +95,45 @@ def calculate(sched: SchedulingData, rating: int, concept=None, db: Session = No
     return updated
 
 
-def _adjust_interval_for_graph_context(updated: dict, avg_neighbor_R: float) -> dict:
+def _adjust_scheduling_for_graph_context(updated: dict, avg_neighbor_R: float) -> dict:
     """
-    Adjust the reviewed concept's interval based on how healthy its graph
+    Adjust the reviewed concept's interval and difficulty based on how healthy its graph
     neighborhood is. This is a SCHEDULING adjustment, not a stability change.
 
-    Intuition:
-      - If your neighbors are weak (low R), you should review sooner because
-        the broader knowledge context is fragile.
-      - If your neighbors are strong (high R), you can afford a slightly
-        longer interval because the foundation is solid.
-
-    Rules:
-      - avg_neighbor_R < 0.5  → reduce interval by 15% (weak context)
-      - avg_neighbor_R > 0.85 → increase interval by 10% (strong context)
-      - Otherwise → no adjustment (neutral zone)
+    We use a continuous linear mapping for smooth interval adjustments:
+        adjustment = 0.5 * avg_neighbor_R + 0.65
+    
+    For difficulty, we penalize the concept if neighbors are failing:
+        difficulty penalty = (1.0 - avg_neighbor_R) * 1.5
 
     The 1.0 sentinel from PropagationEngine means "no neighbors" → no adjustment.
     """
     interval = updated["interval_days"]
+    current_difficulty = updated.get("difficulty_fsrs", 5.0)
 
-    # No neighbors or neutral → no adjustment
+    # No neighbors → no adjustment
     if avg_neighbor_R >= 1.0:
         return updated
 
-    if avg_neighbor_R < 0.5:
-        # Weak graph context: reduce interval to reinforce sooner
-        adjustment = 0.85  # -15%
-    elif avg_neighbor_R > 0.85:
-        # Strong graph context: can afford slightly longer interval
-        adjustment = 1.10  # +10%
-    else:
-        # Neutral zone: no adjustment
-        return updated
-
+    # 1. Interval Adjustment
+    adjustment = (0.5 * avg_neighbor_R) + 0.65
+    adjustment = max(0.65, min(1.15, adjustment))
     adjusted_interval = max(1, round(interval * adjustment))
 
-    # Only update if interval actually changed
     if adjusted_interval != interval:
         updated["interval_days"] = adjusted_interval
         updated["next_review_date"] = (
             datetime.now(timezone.utc) + timedelta(days=adjusted_interval)
         )
+
+    # 2. Difficulty Penalty
+    # If avg_neighbor_R is 0.8, penalty = 0.3. If 0.5, penalty = 0.75.
+    difficulty_penalty = (1.0 - avg_neighbor_R) * 1.5
+    
+    # Apply penalty and clamp between FSRS limits (1.0 to 10.0)
+    new_difficulty = current_difficulty + difficulty_penalty
+    new_difficulty = max(1.0, min(10.0, new_difficulty))
+    
+    updated["difficulty_fsrs"] = round(new_difficulty, 4)
 
     return updated

@@ -73,12 +73,12 @@ class TestWeightCalculation:
     """Verify the multi-signal weight formula: w_final = α*w_expert + β*w_data + γ*w_semantic"""
 
     def test_default_weights(self):
-        """Default: α=0.7, β=0.3, γ=0.0 with w_expert=0.5, w_data=0.0"""
+        """Default: α=0.5, β=0.3, γ=0.2 with w_expert=0.5, w_data=0.0, w_semantic=0.0"""
         from app.algorithms.knowledge_graph import GraphManager, WeightConfig
         config = WeightConfig()
         edge = MockConceptEdge(w_expert=0.5, w_data=0.0, w_semantic=0.0)
         w_final = GraphManager.compute_w_final(edge, config)
-        expected = 0.7 * 0.5 + 0.3 * 0.0 + 0.0 * 0.0  # = 0.35
+        expected = 0.5 * 0.5 + 0.3 * 0.0 + 0.2 * 0.0  # = 0.25
         assert abs(w_final - expected) < 0.001
 
     def test_with_data_signal(self):
@@ -87,7 +87,7 @@ class TestWeightCalculation:
         config = WeightConfig()
         edge = MockConceptEdge(w_expert=0.5, w_data=0.8, w_semantic=0.0)
         w_final = GraphManager.compute_w_final(edge, config)
-        expected = 0.7 * 0.5 + 0.3 * 0.8  # = 0.35 + 0.24 = 0.59
+        expected = 0.5 * 0.5 + 0.3 * 0.8 + 0.2 * 0.0 # = 0.25 + 0.24 = 0.49
         assert abs(w_final - expected) < 0.001
 
     def test_with_semantic_signal(self):

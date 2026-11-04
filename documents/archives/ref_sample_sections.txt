@@ -1,0 +1,157 @@
+=== 1. INTRODUCTION ===
+INTRODUCTION
+
+
+Edge detection is fundamental to image processing and computer vision, where edge detection allows identifying where an object begins and ends (i.e., boundaries) and, therefore, the brightness or color changes. An edge generally represents an area of interest (e.g., textures) or a major change from one texture/edge to another. Edges are also used as input for other advanced techniques such as segmentation and object recognition, classification, and scene understanding. Most traditional edge detection methods (Sobel, Prewitt, Roberts, Laplacian and Canny) were developed based on fixed kernel sizes and manually adjusted threshold values. These methods were originally created to work under controlled conditions (i.e., without noise, varying conditions of threat, or highly textured surfaces); however, the limitations of these traditional edge detection techniques are that they do not handle situations where the image contains a lot of noise, has non-uniform lighting, has very complex textures, or contains objects at different scales and resolution [1]. In our experiments, we found that when the image quality was not constant, traditional edge detection techniques produced blurred, fragmented and/or partial edges, and produced an excessive number of false edges or detections (false positives). As the use of digital imaging increases in a variety of real world scenarios (e.g., in medical imaging/diagnostics, autonomous vehicles, robotics, satellite imagery, industrial inspection, security systems), the fixed nature of traditional edge detection techniques has proven to be inadequate. Therefore, these situations require models that are able to adaptively change their parameters and modify their performance based on the characteristics of each individual image processed [2].
+To help mitigate these issues, this research proposes an adaptive method where PSO (an algorithm based on the principles of natural systems such as bird and fish flocking) is paired with machine learning technology to conduct an optimal search of parameters for images in the most efficient manner. Combining these methods allows for a way to evaluate a number of different edge detection results, and continues to refine towards the best parameters available for a particular image over time. Thus, reliance upon tuning manually is reduced and a more adaptive edge detection system that can effectively withstand noise is presented [3].
+
+Specifically, throughout our investigation, we have compared the traditional edge detection techniques with the newly developed adaptive PSO-based model, using example images such as butterfly images which are widely used in the literature. It is evident visually through our comparisons that there is a substantial difference between the fixed methods and adaptive methods with regards to edge sharpness, continuity and noise suppression. In our example, the performance of the Sobel operator exhibited a considerable amount of fragmentation while the Canny method performed slightly better, yet still lost some fine edge definition. Contrariwise, in our assessment using the adaptive PSO method, larger amounts of image detail were retained and the boundary edges were much more clearly defined.
+
+
+Fig. 1 Original Image
+
+
+
+
+Fig. 2 Canny image	Fig. 3 Sobel image
+
+Necessity
+
+In lots of computer vision applications, it is vital to accurately identify edges, as any small variations (errors) will adversely affect further processes like segmentation or classification. Classical methods were developed when image quality was relatively simple, image variability was low, and computer resources were limited. Today’s image capture methods vary widely in complexity (X-ray, MRI, satellite images, and real-time navigation).
+The major limitation of traditional edge detectors is that the threshold and filter operations are fixed values. As a result, the same fixed values yield very different results in images with varying contexts. Most detectors yield incomplete, too-thick, or inaccurate edges when the image contains noise or has low contrast [4].
+As such, there is increasing demand for a mechanism capable of adapting automatically. Optimisation-based methods using PSO (Particle Swarm Optimisation) have shown success in tuning parameters dynamically. When combined with machine learning, the algorithm can learn to improve its approach over time, producing consistent edge detections across multiple types of images.
+Problem Definition
+
+Some of the traditional edge detection techniques use pre-defined filters and fixed threshold values, which makes them computationally easy to implement, but very difficult to use in the real world due to the considerable variety in image quality based on many influencing factors such as noise, changing illumination conditions, changing contrast levels, and the presence of complex textured backgrounds; likewise, fixed-kernel edge detection systems are adversely influenced by each of these factors.
+The issue being dealt with is the inability of traditional systems to adapt to changing image characteristics and adjust the parameters for detecting edges based on those images; because of this limitation, traditonal systems produce low quality edges. Raising the quality of edges will require the creation of a system that utilizes an automatic means to determine the set of parameters that produces the best possible edge detection results from an image using an optimization technique (PSO) and a means of evaluating the accuracy of edge extraction from an image using machine learning. Ultimately, the combination of these technology-based solutions will produce systems which can effectively eliminate noise
+
+sensitivity, improve edge extraction rates, and generate edges with greater definition, while significantly reducing the need for human interference.
+Objectives
+
+To conduct an investigation of edge detection as well as examine limitations associated with traditional edge detection methods due to fixed parameters.
+To investigate the effect of Particle Swarm Optimization (PSO) on parameter tuning in addition to looking into PSO's effectiveness as an evolutionary search method.
+To incorporate machine learning methods into the edge detection process so that it is adaptive; then, I will evaluate results using established performance metrics.
+To develop familiarity with the steps involved in an image processing workflow. This includes preprocessing images and performing both model training and evaluation.
+To work collaboratively in teams and create an accurate record of the work performed throughout the project.
+Contributions of this Work
+
+The contributions of the project will be summarized with a focus on the original wording and overall meaning. The following are the three contributions of this project:
+The framework provides a modular, hybrid structure that combines particle swarm optimisation (PSO) with supervised learning to exchange information back and forth between the two mechanisms. As a result, it creates a more adaptable edge detection approach and a system with capability to adapt across sets of images that vary widely.
+The proposed fitness objective provides a degree of flexibility to balance accuracy with performance efficiency for edge detection algorithms. This allows the system to provide reasonable accuracy when using both an online/offline algorithmic framework.
+A well-defined experimental process has been established to create well-defined results with the use of standardised datasets (Images) and a very rigorous evaluation method includes the use of cross validation, augmentation, and multiple benchmark comparisons of the accuracy and/or efficiency of distinct edge detection algorithms. With the contributions made to this work, it may further assist to accomplish the goal of bridging until now the gap between classical approaches to detect edges and newer intelligent mechanisms.
+
+Scope and Limitations
+
+Scope
+
+This project will focus on the development of an adaptive edge detection framework that incorporates particle swarm optimization (PSO) as the optimization method and includes a machine learning model to both evaluate and improve the edge detection process. The objective of this project is to create a robust and accurate edge detection algorithm for images under variable conditions.
+
+=== 3. SYSTEM DESIGN ===
+SYSTEM DESIGN
+
+
+
+Proposed System
+
+The proposed system is an Adaptive Edge Detection System based on Particle Swarm Optimization (PSO) with Artificial Intelligence (AI). The aim of the proposed Edge Detection system is to optimize the parameters for Edge Detection in real time, making it easier to create an edge map that is far better, and far more stable than what is produced by computer vision techniques currently available. The system will perform the following steps in its operation: (1) The input image will be preprocessed, (2) Gradient Analysis of the image will be conducted, (3) The parameters used for edge detection will be tuned by PSO, (4) The resulting edge maps obtained from either PSO tuning or gradient analysis, will be evaluated by Machine Learning methods and (5) The edge map will be generated from either PSO tuning or gradient analysis, based on the best Machine Learning method that was used to evaluate all of the different methods [11].
+The input to the proposed system will be an image that will be automatically processed to determine which features to use for performing Edge Detection and then the best edge map will be selected from all the edge detection results, based upon optimally tuned Edge Detection parameters. The system's design utilizes modularity so that modifications during experimentation can be easily made, and debugging can be conducted while designing the system [13].
+The primary reason for developing a PSO-based Edge Detection system is to allow a machine to learn how to recognize Edge Detection algorithms, including how to modify and improve upon them, without requiring continual human oversight. Therefore, our proposed Edge Detection system will be applicable to a wide variety of applications; for example, Medical Imaging Diagnosis, Satellite Imagery Analysis, Automated Surveillance [14].
+The proposed solution has several distinct yet important phases.
+
+Image Preprocessing: This phase involves processing a raw image (input) and performing all of the necessary preprocessing functions (grayscale, resize, and noise reduction) to improve the quality of the image as well as ensure that all images are consistent before going through any further processing stages[16].
+
+Initial Edge Detection by means of Machine Learning: After preprocessing, a machine learning model (typically a lightweight CNN or SVM) will make an initial estimate of the positions of the edges of the image. While this is an important first step, the result may not necessarily provide an optimal map of the edges, as static weights or pre- trained weights may influence this initial prediction.
+Optimization through PSO (Particle Swarm Optimization): This phase will generate a “swarm” of particles. Each particle will represent a candidate set of parameter values; therefore, the position and velocity of each particle will be updated, based on the personal best (pBest) and the global best (gBest) known positions.
+Final Edge Map Generation: Once the final optimized parameter settings have been identified, the original image will be used to perform edge detection using the refined parameters to create a very accurate edge map. This final edge map will be robust to various types of interference traditionally associated with edge detection, including noise, variations in illumination, and texture variation.
+System Architecture
+
+
+Fig. 3.1 Architecture Design
+
+The design of this system's architecture enables ongoing adaptation by the incorporation of new images (and new sources of information) which will continually change the parameters set to detect edges, thus optimising edge detection for all inputs and supporting the detection of different image formats.
+The structure of the architecture enables scalability and modularity, allowing for the ability to upgrade or replace any one of the three components (Process / Optimisation / Machine Learning) as individual modules, without affecting any other module or the overall workflow of the system. As the architecture is designed to accommodate new technologies, the architecture will provide for the introduction and utilisation of newer optimised algorithms, improvements to deep learning models or methods for image processing [17].
+The architecture is able to perform multiple tasks simultaneously. Thus, modelling of large volumes of data (and high resolution images) would benefit from this type of structure due to the improved speed of calculations, while maintaining quality of results. Therefore, the architecture is appropriate for both real-time and large-scale image analysis.
+Key Features of the Proposed System
+
+Self-Tuning
+"An Intelligent Parameter-Adaptive Mechanism Enables Automatic Selection of Threshold Settings Using the Statistical Behaviour of Each Input Image" (an intelligent mechanism that uses statistical behaviour to automatically select the appropriate threshold settings for each input image).
+As a result, no manual tuning is necessary for EDGE Detection. The system automatically adapts itself to the specific lighting conditions and image resolutions and can adjust to multiple contrast situations.
+Therefore, edge detection will always be consistent and accurate, ensuring a highly efficient solution for all types of datasets, including very large datasets or images with wide-ranging contrast [5].
+Hybrid Intelligence
+A model composed of both Machine Learning (ML) and Particle Swarm Optimization (PSO) offers a very versatile approach to edge detection.
+
+Through the use of ML, information and patterns can be extracted from the image and used to help identify targets of interest, whilst PSO is able to evolve the best parameters based upon the input data, thereby maximising the effectiveness of the detection process.
+The use of learning to make decisions and working with evolutionary processes allows the system to excel even with uncertain, noisy or distorted images.
+Noise Resilience
+The proposed System can produce precise Edge Detection Outputs despite Image Noise and Overall Image Quality being Poor Quality.
+The combination of the PSO-based Optimal Parameter Tune along with the Machine Learning Process has allowed for Edge Detection to occur without losing any important characteristic of an edge due to noise and blurriness.
+Therefore, the Proposed System can consistently be used in a wide variety of Practical Applications because all Image Imperfections will be Mitigated.
+Domain Flexibility
+Multiple sectors—including but not limited to; medical imaging, security surveillance, industrial inspection, and satellite or remote-sensing—will be able to utilise the system effectively.
+Adaptive architecture consisting of self-tuning and hybrid intelligent modules, will allow the system to process and store images from a variety of sources, whether MRI or CT scans, or aerial photographs or images from the manufacturing line.
+The ability to use the same method across various sectors, eliminates the need for major changes or adjustments to methodology.
+Implementation Environment
+
+Multiple experiments were performed on different types of images (natural colour images, grayscale images, and x-ray images) to provide an adequate assessment of performance. The goal of the experiment was to assess the model's robustness while working with varying conditions, including the following degradation types: high levels of noise; low levels of contrast; and textured objects.
+
+=== 4. PERFORMANCE ANALYSIS ===
+PERFORMANCE ANALYSIS
+
+
+In this chapter, I will discuss the aspects of performance for a product entitled "Adaptive Edge Detection Using PSO (Particle Swarm Optimization)-based Machine Learning," including an evaluation of the accuracy, consistency, and performance of the product, including a quantitative assessment of the computational capabilities of the product; details of the implementation of the machine learning system, including the different experimental settings within which the product has been tested; a description of the procedure used to optimize parameters during the creation of the product; the methods I employed to assess the performance of the product; the results of the tests I conducted to evaluate the performance of the product (image output); and how the results from the performance test of the product compare to those produced through conventional edge detection methods. The purpose of this chapter is to explain the differences in behaviour exhibited by the proposed hybrid technique depending upon the experimental configuration(s) employed, provide a comparison between this technique and conventional edge detection techniques, and identify areas that need further improvement in relation to the performance of this technique [19][20].
+Parameter Configuration
+
+The PSO Module is used to determine the optimum values for three parameters that affect the quality of the final edge. These parameters greatly influence the degree of sharpness, smoothness, and structural clarity in the output edge map:
+Rollout Start Layer: This parameter indicates which Vision Transformer (ViT) layer will be utilized to extract the features. The deeper layers contain more abstract structures while the shallower layers retain more detailed features.
+Threshold: This will determine the process of binarizing the probabilistic edge map that is produced by ViT. The range of threshold values that will be searched for by the PSO will be between 0.01 to 0.6 which will consequently allow for the PSO to adjust the threshold according to the characteristics of the contrast and texture of the images being processed.
+Smoothing Sigma (float): This parameter specifies how much Gaussian smoothing will be applied to the optimized edge image. The range of smoothing sigma values
+
+that will be searched will be from 0.0 to 6.0 this will allow the PSO to create an appropriate balance between the suppression of noise and the overall sharpness of the edge.
+PSO Hyperparameters
+
+Number of Particles: 15
+
+Iterations: 20
+
+Inertia Weight (w): 0.729
+
+Cognitive Constant (c1): 1.49445
+
+Social Constant (c2): 1.49445
+
+The hyper-parameters for this study were chosen based on previous experimentation and established methodology in dip representations of edge detection. Each particle will represent a different combination of edge detection hyperparameters, and throughout the optimization of the algorithm, the velocity and position of each particle are updated in a cyclic manner. The iterative updates allow the swarm to converge towards the optimal set of hyper-parameters for producing high-quality edge maps [19].
+Fitness Function :
+
+The proposed system uses Particle Swarm Optimization to obtain the best possible edge map from the Vision Transformer by maximizing the F1-score between the edge map produced by the Vision Transformer and the reference edge map. The reference edge map can be obtained by using the Canny detector or through manual annotation of the ground truth.
+The F1-score is calculated using the expression :
+
+
+𝐹1 =
+2 × (Precision × Recall) (Precision + Recall)
+
+By means of this definition we have obtained an approach that balances both recall accuracy and recall completeness, therefore helping to prevent convergence exclusively to either type of edge. Convergence is achieved on an ideal parameter set producing edges characterised by both accurateness (low rate of false positive errors) as well as complete accuracy (low rate of false negative errors).
+
+Evaluation Metrics
+
+The evaluation of each edge detection technique was carried out using both qualitative and quantitative measures. The qualitative measures were used to compare the classical edge detection techniques to the hybrid edge detection technique. Also, the quality of edges detected, their sharpness, and their associated computational performance can be derived from the quantitative metrics.
+The term precision (P) measures the percentage of pixels determined to be an edge (correctly identified) for all edges predicted by the algorithm. A high value for this measure would indicate that there are relatively few false edges detected by the method.
+Recall (R) measures the percentage of true edge pixels successfully detected by the method. A high recall means that the method is successfully detecting even weak or subtle edges
+F1-Score is the harmonic mean of precision and recall; therefore, this measure is a good indicator of how well an algorithm performs in relation to both accuracy (precision) and completeness (recall).
+Peak Signal-to-Noise Ratio (PSNR) measures how comparable the quality of an edge map is to the quality of the reference output.
+Pratt’s Figure of Merit (PFOM) evaluates how accurately edge detection algorithms localised and connected edges to produce accurate, well-formed, and smooth edges.
+Execution Time computes the amount of time it takes an algorithm to process an image and is an indication of how well the algorithm utilises computational resources; therefore, it is also an indication of how applicable an algorithm is in real time.
+
+
+Each of these performance measures enables a complete comparison of classical edge detectors with the PSO-enhanced ViT model proposed by us.
+Results and Observations
+
+Canny edge detection creates sharp, fine edges but tends to enhance the noise; likewise, the fixed threshold can be a problem in the detection of weak edges and increase the rate of false edge responses for textured areas.
+
+Adaptive thresholding is characterized by clear and bold edges but does not provide a high degree of accuracy for regions with smooth intensity transitions; as a result, it often results in thicker edges and loss of significant fine detail.
+Sobel edge detection effectively detects the gradient of the image in terms of localised filtering; however; the localised filtering results in the production of duplicate or noisy edge responses.
+Vision Transformer (ViT) uses the global context while still producing a smoothed edge arising from the advantage of the use of the Adam optimisation.
+The main issue with ViT edge detection is that whether or not an edge is defined clearly depends on how the threshold was selected for binarisation. Particle Swarm Optimisation (PSO) allows for adaptive tuning of parameters used by Vision Transformers, thus resulting in the production of the finest and most accurately defined edges available to date.
+The edges produced by PSO optimised ViT have been observed to be sharper with a very clear localised edge response and an improved clean response relative to classical edge detectors (i.e., Sobel, Canny).
+
+
+Test images show that the PSO-based system exhibited a greater discriminating power than conventional detectors, particularly when dealing with medical scans and images in low contrast situations where most conventional detectors failed to find useful edges. The PSO system produced clearer and more informative edge maps than the hybrid detectors were capable of producing.

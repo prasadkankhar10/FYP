@@ -35,6 +35,7 @@ def create_subject(
         user_id=current_user.id,
         name=payload.name,
         description=payload.description,
+        exam_date=payload.exam_date,
     )
     db.add(subject)
     db.commit()
@@ -60,6 +61,8 @@ def update_subject(
         subject.name = payload.name
     if payload.description is not None:
         subject.description = payload.description
+    if payload.exam_date is not None:
+        subject.exam_date = payload.exam_date
 
     db.commit()
     db.refresh(subject)

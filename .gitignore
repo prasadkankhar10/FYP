@@ -20,3 +20,9 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Build & Temporary Scratch Files
+backend/build/
+*.spec
+scratch_*
+

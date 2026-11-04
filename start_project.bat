@@ -3,18 +3,16 @@ echo ===================================================
 echo     Starting Adaptive Review Scheduling System 
 echo ===================================================
 
-echo.
 echo Starting FastAPI Backend...
-start cmd /k "cd backend && .venv\Scripts\activate && uvicorn app.main:app --reload"
+start cmd /k "cd backend && .venv\Scripts\activate && uvicorn app.main:app --reload --port 8000"
 
-echo.
 echo Starting Vite Frontend...
 start cmd /k "cd frontend && npm run dev"
 
-echo.
-echo ===================================================
-echo     Servers are starting in separate windows!
-echo     Frontend: http://localhost:5173
-echo     Backend:  http://127.0.0.1:8000/docs
-echo ===================================================
-pause
+echo Waiting for servers to initialize...
+timeout /t 3 >nul
+
+echo Opening browser...
+start http://localhost:5173
+
+exit

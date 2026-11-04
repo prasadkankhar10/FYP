@@ -1,0 +1,94 @@
+=== TABLE 0 (28x2) ===
+  Row 0: List of Figures List of Table Abstract | i ii iii
+  Row 1: 1.  INTRODUCTION | 1
+  Row 2: 1.1 Necessity | 3
+  Row 3: 1.2 Problem definition | 3
+  Row 4: 1.3 Objectives | 4
+  Row 5: 1.4 Scope and limitations | 5
+
+=== TABLE 1 (11x3) ===
+  Row 0: Figure | Illustration | Page
+  Row 1: 1.1 | Original image | 2
+  Row 2: 1.2 | Canny image | 2
+  Row 3: 1.3 | Sobel image | 2
+  Row 4: 2.1 | Original image | 16
+  Row 5: 2.2 | Adaptive image | 17
+
+=== TABLE 2 (3x3) ===
+  Row 0: Table | Illustration | Page
+  Row 1: 3.1 | Data Organization | 25
+  Row 2: 4.6 | Comparative Analysis | 45
+
+=== TABLE 3 (4x7) ===
+  Row 0:  | −1 | 0	1 | −1 | −2 | −1 | 
+  Row 1:  | Gx = [−2 | 0	2], | Gy = [ 0 | 0 | 0 | ]
+  Row 2:  | −1 | 0	1 | 1 | 2 | 1 | 
+  Row 3: Where: |  |  |  |  |  | 
+
+=== TABLE 4 (6x3) ===
+  Row 0: Technique | Strengths | Limitations
+  Row 1: Sobel, Prewitt, Roberts | Simple, low computation | Noise-sensitive, non- adaptive
+  Row 2: LoG, Canny | Better accuracy; multi- stage | Fixed thresholds; reduced robustness
+  Row 3: PSO-based methods | Adaptive parameter tuning | Moderate to high computation
+  Row 4: Machine Learning | Learns complex patterns | Requires large datasets
+  Row 5: Hybrid PSO–ML | High accuracy, adaptive | Complex design and training
+
+=== TABLE 5 (2x3) ===
+  Row 0: Folder Name | Content Description | Purpose
+  Row 1: Training Data | Contains labeled images paired with their ground truth edge maps. | Used to train the edge detection model, allowing it to learn patterns and improve accuracy over time.
+
+=== TABLE 6 (2x3) ===
+  Row 0: Testing Data | Consists of new, unseen images without labels. | Used for independent performance evaluation to determine how well the model generalizes to fresh data.
+  Row 1: Validation Data | A selected subset from the training dataset. | Used to monitor the model’s performance during training and prevent overfitting by fine-tuning hyperparameters.
+
+=== TABLE 7 (8x5) ===
+  Row 0: Original |  |  |  | 
+  Row 1: Basic |  |  |  | 
+  Row 2: Adaptiv e |  |  |  | 
+  Row 3: Sobel |  |  |  | 
+  Row 4: PSO |  |  |  | 
+  Row 5: ML |  |  |  | 
+
+=== TABLE 8 (5x7) ===
+  Row 0: Technique category | Representativ -e Method | Core Principle | Typical dataset used | Advantage | Disadvantage | Typical Application
+  Row 1: Traditional | Sobel, Canny, Prewitt | Gradient- based | BSDS500, COCO subset | Simplicity, Computation al efficiency | Noise sensitivity, Fixed parameters, Thicker edges | Basic object boundary detection, Robot vision
+  Row 2: Optimization | Particle Swarm Optimization- based methods | Swarm Intelligenc e | BSDS500, Medical CT | Parameter optimization , Noise resilience | Higher computational cost than traditional methods | Noisy image processing, Medical imaging
+  Row 3: Machine Learning | SVM, Random Forest, Lightweight CNN | Data- driven learning | BSDS500, DRIVE | Adaptability to diverse image types, Context- sensitive decisions | Requires labeled datasets | Medical scans, Industrial component detection
+  Row 4: Deep Learning | HED, RCF, Vision Transformer | Hierarchic al feature learning, Attention mechanism | BSDS500 | High accuracy, Automatic feature extraction | Large data requirement, Significant computational resources | Autonomous systems, Surveillance, Biometrics
+
+=== TABLE 9 (4x2) ===
+  Row 0: Component | Cost (INR)
+  Row 1: System usage (120 hours × ₹15/hour) | ₹1,800
+  Row 2: Backup storage | ₹300
+  Row 3: Internet/data usage | ₹200
+
+=== TABLE 10 (3x2) ===
+  Row 0: Software/Utility | Cost
+  Row 1: Open-source tools | Free
+  Row 2: Utility tools/document converters | ₹300
+
+=== TABLE 11 (2x2) ===
+  Row 0: Cloud Service | Cost
+  Row 1: GPU runtime (20 hours × ₹60/hour) | ₹1,200
+
+=== TABLE 12 (2x2) ===
+  Row 0: Activity | Cost
+  Row 1: Dataset cleaning & preparation | ₹800
+
+=== TABLE 13 (5x3) ===
+  Row 0: Task | Hours | Cost
+  Row 1: Implementation (40 hrs × ₹50/hr) | 40 Hrs | ₹2,000
+  Row 2: Testing & analysis (30 hrs × ₹50/hr) | 30 Hrs | ₹1,500
+  Row 3: Documentation (20 hrs × ₹50/hr) | 20 Hrs | ₹1,000
+  Row 4: UI integration (10 hrs × ₹50/hr) | 10 Hrs | ₹500
+
+=== TABLE 14 (3x2) ===
+  Row 0: Item | Cost
+  Row 1: Printing & binding | ₹300
+  Row 2: Stationery | ₹200
+
+=== TABLE 15 (3x2) ===
+  Row 0: 5% | Internet sources
+  Row 1: 4% | Publications
+  Row 2: 0% | Submitted works (Student Papers)
+

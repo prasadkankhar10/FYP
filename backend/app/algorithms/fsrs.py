@@ -12,11 +12,14 @@ w = [
     1.54575, 0.1192, 1.01925, 1.9395, 0.11, 0.29605, 2.2698, 0.2315, 2.9898
 ]
 
-def calculate(sched: SchedulingData, rating: int) -> dict:
+def calculate(sched: SchedulingData, rating: int, w_custom: list = None) -> dict:
     """
     Apply FSRS algorithm.
     rating mapping: 1: Again, 2: Hard, 3: Good, 4: Easy
     """
+    # Use custom weights if provided, else default
+    weights = w_custom if w_custom else w
+    
     # Parse inputs
     last_D = sched.difficulty_fsrs if sched.difficulty_fsrs > 0 else 5.0
     last_S = sched.stability
@@ -32,32 +35,32 @@ def calculate(sched: SchedulingData, rating: int) -> dict:
     # First review logic: initialized S and D based directly on the grade
     if last_S == 0:
         if rating == 1:
-            S = w[0]
+            S = weights[0]
         elif rating == 2:
-            S = w[1]
+            S = weights[1]
         elif rating == 3:
-            S = w[2]
+            S = weights[2]
         else: # 4
-            S = w[3]
+            S = weights[3]
         
-        D = w[4] - w[5] * (rating - 3)
+        D = weights[4] - weights[5] * (rating - 3)
     else:
         # Update difficulty
-        D = last_D - w[6] * (rating - 3)
+        D = last_D - weights[6] * (rating - 3)
         
         # Mean reversion for difficulty
-        D = D * (1 - w[7]) + w[4] * w[7]
+        D = D * (1 - weights[7]) + weights[4] * weights[7]
         D = min(max(D, 1.0), 10.0)
 
         # Update stability
         if rating == 1: # Failed (Again)
-            S = w[11] * math.pow(last_D, -w[12]) * (math.pow(last_S + 1, w[13]) - 1) * math.exp(w[14] * (1 - R))
+            S = weights[11] * math.pow(last_D, -weights[12]) * (math.pow(last_S + 1, weights[13]) - 1) * math.exp(weights[14] * (1 - R))
         else: # Passed (Hard, Good, Easy)
-            S = last_S * (1 + math.exp(w[8]) * (11 - last_D) * math.pow(last_S, -w[9]) * (math.exp((1 - R) * w[10]) - 1))
+            S = last_S * (1 + math.exp(weights[8]) * (11 - last_D) * math.pow(last_S, -weights[9]) * (math.exp((1 - R) * weights[10]) - 1))
             if rating == 2:
-                S *= w[15]
+                S *= weights[15]
             elif rating == 4:
-                S *= w[16]
+                S *= weights[16]
 
     # By definition of FSRS, Stability (S) is the interval when Retrievability drops to exactly 0.90
     # Because we target 90% retention, interval = S

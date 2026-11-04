@@ -9,11 +9,13 @@ from typing import Optional
 class SubjectCreate(BaseModel):
     name: str
     description: Optional[str] = None
+    exam_date: Optional[datetime] = None
 
 
 class SubjectUpdate(BaseModel):
     name: Optional[str] = None
     description: Optional[str] = None
+    exam_date: Optional[datetime] = None
 
 
 class SubjectOut(BaseModel):
@@ -21,6 +23,7 @@ class SubjectOut(BaseModel):
     user_id: int
     name: str
     description: Optional[str]
+    exam_date: Optional[datetime]
     created_at: datetime
 
     model_config = {"from_attributes": True}

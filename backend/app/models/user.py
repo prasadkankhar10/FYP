@@ -20,6 +20,9 @@ class User(Base):
     # Default is None — uses global FSRS-4 initial parameters
     fsrs_params = Column(Text, nullable=True)
 
+    # Knowledge Graph personalized weights (α, β, γ) stored as a JSON string
+    kg_params = Column(Text, nullable=True)
+
     # User's academic goals or profile for AI Customization
     bio = Column(Text, nullable=True)
 

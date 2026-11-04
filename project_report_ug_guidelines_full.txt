@@ -1,0 +1,499 @@
+=== PAGE 1 ===
+Page 1 of 13  
+ 
+G.S. Mandal’s 
+Maharashtra Institute of Technology 
+Chhatrapati Sambhajinagar 
+ 
+(An Autonomous Institute) 
+ 
+Dr. Babasaheb Ambedkar Marathwada University 
+Chhatrapati Sambhajinagar 
+ 
+ 
+ 
+ 
+ 
+     
+ 
+Guidelines For Preparation of 
+Thesis/Dissertations/Seminar/ Reports 
+ 
+ 
+ 
+ 
+2026 
+
+=== PAGE 2 ===
+ 
+Page 2 of 13 
+Guidelines for preparation of Thesis/Dissertations/Reports 
+ 
+Preamble 
+While it is essential to pay  attention to the content of the thesis/dissertation/project report 
+(hereinafter called the 'thesis'), which is being submitted in partial fulfillment of the 
+requirements of the respective degree, it is also imperative that a standard format be 
+prescribed. The same format shall be followed in preparation of the final copies of the thesis 
+to be submitted to the Department/Library in future. 
+ 
+ 
+1. Organization of the Thesis/Dissertation/Report 
+This thesis shall be presented in a number of chapters, starting with Introduction and 
+ending with Summary and Conclusions. Each of the other chapters will have a precise 
+title reflecting the contents of the chapter. A chapter can be subdivided into sections, 
+subsections and sub subsections so as to present the content discretely and with due 
+emphasis. When the work comprises two or more mutually independent investigations, 
+the thesis may be divided into two or more parts, each with an appropriate title. However, 
+the numbering of chapters will be continuous right through, for example Part 1 may 
+comprise Chapters 2-5, Part Two, Chapters 6-9. 
+ 
+1.1 Introduction 
+The title of Chapter 1 shall be Introduction. It shall justify and highlight the problem 
+posed, define the topic and explain the aim and scope of the work presented in the thesis. 
+It may also highlight the significant contributions from the investigation. 
+ 
+1.2 Review of Literature 
+This shall normally form Chapter 2 and shall present a critical appraisal of the previous 
+work published in the literature pertaining to the topic of the investigation. The extent  
+and emphasis of the chapter shall depend on the nature of the investigation. 
+ 
+1.3 Report on the present investigation 
+The reporting on the investigation shall be presented in one or more chapters with 
+appropriate chapter titles. 
+• Due importance shall be given to experimental setups, procedures adopted, 
+techniques developed, methodologies developed and adopted. 
+• While important derivations/formulae should normally be presented in the text of 
+these chapters, extensive and long treatments, copious details and tedious 
+information, detailed results in tabular and graphical forms may be presented in 
+Appendices. Representative data in table and figures may, however, be included  
+in appropriate chapters. 
+ 
+• Figures and tables should be presented immediately following their first mention 
+in the text. Short tables and figures (say, less than half the writing area of the 
+page) should be presented within the text, while large table and figures may be 
+=== PAGE 3 ===
+ 
+Page 3 of 13 
+presented on separate pages. 
+• Equations should form separate lines with appropriate paragraph separation above 
+and below the equation line, with equation numbers flushed to the right. 
+1.4 Results and Discussions 
+This shall form the penultimate chapter of the thesis and shall include a thorough 
+evaluation of the investigation carried out and bring out the contributions from the study. 
+The discussion shall logically lead to inferences and conclusions as well as scope for 
+possible further future work. 
+1.5 Summary and Conclusions 
+This will be the final chapter of the thesis. A brief report of the work carried out shall 
+form the first part of the Chapter. Conclusions derived from the logical analysis presented 
+in the Results and Discussions Chapter shall be presented and clearly enumerated, each 
+point stated separately. Scope for future work should be stated lucidly in the last part of 
+the chapter. 
+ 
+1.6 Appendix 
+Detailed information, lengthy derivations, raw experimental observations etc. are to be 
+presented in the separate appendices, which shall be numbered in Roman Capitals (e.g. 
+“Appendix IV”). Since reference can be drawn to published/unpublished literature in the 
+appendices these should precede the “Literature Cited” section. 
+ 
+1.7 Literature Cited 
+This should follow the Appendices, if any, otherwise the Summary and Conclusions 
+chapter. The candidates shall follow the style of citation and style of listing in one of the 
+standard journals in the subject area consistently throughout his/her thesis, for example, 
+IEEE in the Department of Electronics and Telecommunication, ASME in Department of 
+Mechanical Engineering. However, the names of all the authors along with their initials 
+and the full title of the article/monogram/book etc. have to be given in addition to the 
+journals/publishers, volume, number, pages(s) and year of publication. Citation from 
+websites should include the names(s) of author(s) (including the initials), full title of the 
+article, website reference and when last accessed. Reference to personal communications, 
+similarly, shall include the author, title of the communication (if any) and date of receipt. 
+=== PAGE 4 ===
+ 
+Page 4 of 13 
+1.7.1 Examples of 
+the citations IEEE 
+Format 
+Example for citation of journal paper 
+J. Kou, “Estimating the number of clusters via the GUD statistic,” J. Comput. Graph. 
+Statist., vol. 23, no. 2, pp. 403–417, Jun. 2014 
+ 
+Example for citation of a book 
+ 
+J. P. Hailman, Coding and Redundancy: Man-Made and Animal-Evolved Signals. 
+Cambridge, MA, USA: Harvard Univ. Press, 2008 
+ 
+Example for citation of website 
+ 
+B. Fung. “Amazon offers concessions to resolve EU antitrust probes.” CNN.com. 
+https://edition.cnn.com/2022/07/14/tech/amazon-concessions-eu-antitrust/index.html 
+(accessed Jul. 18, 2022). 
+ 
+ 
+ASME Format 
+Example for citation of journal paper 
+Adams, Z., 2014, “Bending of an Infinite Beam on an Elastic Substrate,” ASME J Appl. 
+Mech., 3, pp. 221-228. 
+ 
+Example for citation of a book 
+ 
+Modi, P. N. and Seth S. N., 2017, Hydraulics and Fluid Mechanics Including Hydraulic 
+Machines (In SI Units), Standard Book House, New Delhi, India. 
+ 
+ 
+ 
+1.7.2 Publications by the candidate 
+Articles, technical notes etc. on the topic of the thesis published by the candidate may be 
+separately listed after the literature cited. This may also be included in the contents. The 
+candidates may also include reprints of his/her publications after the literature citation. 
+ 
+1.8 Acknowledgements 
+The acknowledgments by the candidate shall follow the citation of literature, signed by 
+him/her, with date. 
+=== PAGE 5 ===
+ 
+Page 5 of 13 
+2. Thesis Format 
+2.1 Paper 
+ 
+2.1.1 Quality 
+The thesis shall be printed/Xeroxed on white bond paper, whiteness 95% or above,  
+weight 70 gram or more per square meter. 
+ 
+2.1.2 Size 
+The size of the paper shall be standard A 4; height 297 mm, width 210 mm. 
+ 
+2.1.3 Type Setting, Text Processing and Printing 
+The text shall be printed employing laser jet or inkjet printer, the text having been 
+processed using a standard text processor. The standard font shall be Times New Roman 
+of 12 pts with 1.5 line spacing. 
+ 
+2.1.4 Page Format 
+The Printed Sheets shall have the following written area and margins: 
+ 
+Top Margin 15 mm 
+Head Height 3 mm 
+Head Separation 12 mm 
+Bottom Margin 22 mm 
+Footer 3 mm 
+Foot Separation 10 mm 
+Text Height 245 mm 
+Text Width 160 mm 
+When header is not used the top margin shall be 30 mm. 
+ 
+Left and Right Margins 
+The candidates shall have the options of single or double sided printing 
+• Single sided/odd number page (in double 
+sided printing) Left Margin 30mm 
+Right Margin 20 mm 
+ 
+• Double sided even 
+numbered page Left Margin 
+20mm 
+Right Margin 30mm 
+=== PAGE 6 ===
+ 
+Page 6 of 13 
+2.1.5 Pagination 
+Page numbering in the text of the thesis shall be Hindu Arabic numerals at the center of 
+the footer. But when the candidate opts for header style the page number shall appear at 
+the right and left top corner for the odd and even number pages, respectively. 
+ 
+Page number “1” for the first page of the Introduction chapter shall not appear in print; 
+only the second page will bear the number “2”. 
+ 
+The subsequent chapters shall begin on a fresh page (fresh odd number page in case of 
+double sided printing). When header style is chosen the first page of each chapter will not 
+have the header and the page number shall be printed at the center of the footer. 
+ 
+Pagination for pages before the Introduction chapter shall be in lower case Roman 
+numerals, e.g., “iv”. 
+ 
+ 
+2.1.6 Header 
+When the header style is chosen, the header can have the Chapter number and Section 
+number (e.g., Chapter 2, Section 3) on even numbered page headers and Chapter title or 
+Section title on the odd numbered page header. 
+ 
+2.1.7 Paragraph format 
+Vertical space between paragraphs shall be about 2.5 line spacing. 
+ 
+The first line of each paragraph should normally be indented by  five characters or 12mm. 
+A candidate may, however, choose not to indent if (s) he has provided sufficient 
+paragraph separation. 
+A paragraph should normally comprise more than one line. A single line of a paragraph 
+shall not be left at the top or bottom of a page (that is, no windows or orphans should be 
+left) 
+ 
+The word at the right end of the first line of a page or paragraph should, as far as  
+possible, not be hyphenated. 
+ 
+2.2 Chapter and Section Format 
+ 
+2.2.1 Chapter 
+Each chapter shall begin on a fresh page (odd number page in case of double sided 
+printing) with an additional top margin of about 75mm . Chapter number (in Hindu -
+Arabic) and title shall be printed at the center of the line in 6mm font size (18pt) in bold 
+face using both upper and lower case (all capitals or small capitals shall not be used). A 
+vertical gap of about 25mm shall be left between the Chapter number and Chapter title 
+lines and between chapter title line and the first paragraph. 
+=== PAGE 7 ===
+ 
+Page 7 of 13 
+2.2.2 Sections and Subsections 
+A chapter can be divided into Sections, Sub -sections and Sub -sub-Sections so as to 
+present different concepts separately. Sections and subsections can be numbered using 
+decimal points, e.g. 2.2 for the second section in Chapter 2 and 2.3.4 for the fourth 
+Subsection in third Section of Chapter 2. Chapters, Sections and Subsections shall be 
+included in the contents with page numbers flushed to the right. Further subsections need 
+not be numbered or included in the contents. 
+The Section and Sub-Section titles along with their numbers in 5 and 4mm (16 and 14 pt) 
+fonts, respectively, in bold face shall be flushed to the left (not centered) with 15 mm 
+space above and below these lines. 
+In further subdivisions character size of 3 and 3.5 with bold face, small caps, all caps and 
+italics may be used for the titles flushed left or centered. These shall not feature in the 
+contents. 
+ 
+ 
+2.2.3 Table / Figure Format 
+As far as possible, tables and figures should be presented in portrait style. Small size  
+table and figures (less than half of writing area of a page) should be incorporated within 
+the text, while larger ones may be presented on separate pages. Table and figures shall be 
+numbered chapter wise. For example, the fourth figure in chapter 5 will bear the number 
+Figure 5.4. 
+ 
+Table number and title will be placed above the table while the figure number and  
+caption will be located below the figure. Reference for Table and Figures reproduced 
+from elsewhere shall be cited in the last and separate line in the table and figure caption, 
+e.g. (after McGregor [12]). 
+ 
+ 
+3. Auxiliary Format 
+3.1 Binding 
+The evaluation copies of the thesis/dissertation/report may be spiral bound or soft bound. 
+The final hard bound copies to be submitted after the viva -voce examination will be 
+accepted during the submission of thesis/dissertation/report with the following color 
+specification: 
+ 
+Seminar report Spiral bound with transparent cover 
+Mini Project/Internship report Spiral bound with transparent cover 
+BE Project Report Black hard bound cover 
+Dissertation Report Black hard bound cover 
+ 
+3.2 Front Covers 
+The front covers shall contain the following details: 
+=== PAGE 8 ===
+ 
+Page 8 of 13 
+• Full title of thesis in 6 mm 22 point's size font properly  centered and positioned at 
+the top. 
+• Full name of the candidate in 4.5 mm 15 point's size font properly centered at the 
+middle of the page. 
+• A 40 mm diameter replica of the Institute emblem followed by the name of 
+department, name of the Institute and the year of submission, each in a separate 
+line and properly centered and located at the bottom of page. 
+ 
+ 
+3.2.1 Lettering 
+All lettering shall be embossed in gold. 
+ 
+3.2.2 Bound back 
+The degree, the name of the candidate and the year of submission shall also be 
+embossed on the bound (side) in gold. 
+ 
+3.3 Blank Sheets 
+In addition to the white sheets (binding requirement) two white sheets shall be put at the 
+beginning and the end of the thesis. 
+ 
+3.4 Title Sheet 
+This shall be the first printed page of the thesis and shall contain the submission 
+statement: the Thesis/Dissertation/project Report submitted in partial fulfillment of the 
+requirements of the Degree, B.E., the name and Roll No. of the candidate, name(s) of the 
+Guide and Co-guide (s) (if any), Department, Institute and year of submission. 
+ 
+Sample copy of the 'Title Sheet' is appended (Specimen 'A') 
+3.5 Dedication Sheet 
+If the candidate so desires(s) he may  dedicate his/her thesis, which statement shall follow 
+the title page. If included, this shall form the page 1 of the auxiliary sheets but shall not 
+have a page number. 
+ 
+3.6 Certificate 
+In the absence of a dedication sheet this will form the first page and in that case shall not 
+have a page number. Otherwise, this will bear the number two in Roman lower case „ii‟ at 
+the center of the footer. The top line shall be: 
+ 
+ 
+CERTIFICATE 
+A sample copy of the Approval Sheet is appended (Specimen `B') 
+=== PAGE 9 ===
+ 
+Page 9 of 13 
+3.7 Approval Sheet 
+In the absence of a dedication sheet this will form the second page and in that case shall 
+have a page number „ii‟. Otherwise, this will bear the number „three in Roman lower case 
+“iii” at the center of the footer. The top line shall be: 
+ 
+1. Report Approval for B.E. as the case may be. 
+ 
+The Approval Sheets are to be included only in the hard bound copies which are 
+submitted after the successful viva voce examination. 
+A sample copy of the Approval Sheet is appended (Specimen `C') 
+ 
+3.8 Abstract 
+At least 500 words abstract shall highlight the important features of the 
+thesis/dissertation/report. The Abstract in the thesis, may have two more parts, namely, 
+the layout of the thesis giving a brief chapter wise description of the work and the key 
+words. 
+ 
+3.9 Contents 
+The contents shall follow the Abstract and shall enlist the titles of the chapters, 
+section and subsection using  decimal notation, as in the text, with corresponding  page 
+number against them, flushed to the right. 
+ 
+3.9.1 List of Figures and Tables 
+Two separate lists of Figure captions and Table titles along with their numbers and 
+corresponding page numbers against them shall follow the Contents. 
+ 
+3.10 Abbreviation Notation and Nomenclature 
+A complete and comprehensive list of all abbreviations, notations and nomenclature 
+including Greek alphabets with subscripts and superscripts shall be provided after the list 
+of tables and figures.(As far as possible, generally accepted symbols and notation should 
+be used). 
+Auxiliary page from dedication (if any) to abbreviations shall be numbered using Roman 
+numerals in lower case, while the text starting from the Introduction shall be in Hindu -
+Arabic. (The first pages in the both the cases shall not bear a page number). 
+ 
+3.11 A Declaration of Academic Honesty and Integrity 
+A declaration of Academic honesty and integrity is required to be included along with 
+every thesis/dissertation/report after the approval sheet. The format of this declaration is 
+given in Specimen `D' attached. 
+ 
+***************************** 
+=== PAGE 10 ===
+“Nurturing Growth, Shaping The Future Since 1975” 
+ 
+  
+ 
+  
+  
+  
+ 
+SUBMITTED TO 
+DR. BABASAHEB AMBEDKAR MARATHWADA UNIVERSITY 
+CHHATRAPATI SAMBHAJINAGAR - 431004 
+IN PARTIAL FULFILMENT OF THE REQUIREMENTS  
+FOR THE DEGREE OF 
+  
+  
+ 
+  
+  
+(240201110002) 
+ 
+RESEARCH GUIDE 
+  
+ 
+ 
+ 
+  
+  
+CHHATRAPATI SAMBHAJINAGAR - 431 010 (M.S.), INDIA 
+(AN AUTONOMOUS INSTITUTE) 
+ 
+ 
+202X-2026
+SUBMITTED BY
+XXXX XXXX XXXX
+A PROJECT REPORT ON
+BATCHEOR OF TECHNOLOGY
+XXX XXXX XXXX
+IN BRANCH ENGINEERING
+          TITLE OF THE REPORT
+MAHARASHTRA INSTITUTE OF TECHNOLOGY
+DEPARTMENT OF BRANCH ENGINEERING
+=== PAGE 11 ===
+ 
+Page 11 of 13 
+Specimen 'B': Certificate Sheet 
+ 
+ 
+Certificate  
+ 
+This is to certify that the thesis/dissertation/report entitled „Title of the 
+thesis/dissertation/report‟ submitted by Author name/Authors names (PRN No. xxx, yyy, 
+zzz), in the partial fulfillment of the requirement for the award of Bachelor of TEchnology 
+(Branch Name) of Maharashtra Institute of Technology, affiliated to Dr. Babasaheb 
+Ambedkar Marathwada University, Chhatrapati Sambhajinagar, Maharashtra State, India, is a 
+record of his own work. The work embodied in this report has not formed earlier for the basis 
+of the award of any degree or compatible certificate or similar title of this for any other 
+diploma /examining body or university to the best of knowledge and belief. 
+ 
+ 
+Name of the Guide 
+Guide 
+Name of the Department 
+Name of the Head 
+Head of the Department 
+Name of the Department 
+ 
+Place: Chhatrapati Sambhajinagar 
+Date: 
+ 
+  
+=== PAGE 12 ===
+ 
+Page 12 of 13 
+Specimen `C': Approval Sheet 
+ 
+Approval Sheet  
+This thesis/dissertation/report entitled 
+ 
+WRITE THE TITLE HERE IN CAPITAL TIMES NEW ROMAN WITH BOLD 
+CASE AND 14 FONT SIZE 
+ 
+by  
+Author/Authors Name 
+(PRN numbers) 
+ 
+is approved for the degree of 
+Bachelor of Engineering in Civil Engineering 
+of 
+ 
+Department of Civil Engineering 
+G.S. Mandal’s Maharashtra Institute of Technology, Chhatrapati Sambhajinagar 
+ affiliated to Dr. Babasaheb Ambedkar Marathwada University,  
+Chhatrapati Sambhajinagar, Maharashtra State, India 
+ 
+ 
+Examiners Name Signature 
+1. External Examiner   
+2. Internal Examiner   
+3. Guide   
+ 
+Date: 
+Place: Chhatrapati Sambhajinagar
+=== PAGE 13 ===
+ 
+Page 13 of 13 
+Specimen `D' – Declaration 
+Declaration 
+ 
+I declare that this written submission represents my ideas in my own words and where others' 
+ideas or words have been included, I have adequately cited and referenced the original 
+sources. I also declare that I have adhered to all principles of academic honesty and integrity 
+and have not misrepresented or fabricated or falsified any idea/data/fact/source in my 
+submission. I understand that any violation of the above will be cause for disciplinary action 
+by the Institute and can also evoke penal action from the sources which have  thus not been 
+properly cited or from whom proper permission has not been taken when needed. 
+ 
+ 
+ 
+ 
+(Signature/s) 
+ 
+ 
+(Name of the student/s) 
+ 
+ 
+(PRN Nos.) 
+ 
+Date: 
+Place: Chhatrapati Sambhajinagar 

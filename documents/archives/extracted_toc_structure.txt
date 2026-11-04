@@ -1,0 +1,111 @@
+[2] (Heading 2) ADAPTIVE EDGE DETECTION BY VIRTUE OF PSO- DRIVEN MACHINE LEARNING
+[17] (Heading 2) DECLARATION
+[26] (Heading 3) Signature and Name of students
+[30] (Heading 2) CERTIFICATE
+[40] (Heading 3) Ms. B. P. Chaudhari
+[42] (Heading 3) Dr. S. L. Kasar
+[53] (Heading 3) Dr. N. G. Patil
+[57] (Heading 2) ACKNOWLEDGEMENT
+[68] (Heading 3) NAME OF STUDENT
+[71] (Heading 2) APPROVAL CERTIFICATE
+[83] (Heading 2) INDEX/CONTENTS
+[84] (Heading 3) TITLE	PAGE NO
+[85] (Body Text) Declaration Certificate Acknowledgement Approval certificate
+[94] (Heading 3) ABSTRACT
+[99] (Heading 2) INTRODUCTION
+[115] (Heading 3) Necessity
+[120] (Heading 3) Problem Definition
+[126] (Heading 3) Objectives
+[133] (Heading 3) Contributions of this Work
+[140] (Heading 3) Scope and Limitations
+[154] (Heading 3) Limitations
+[164] (Heading 3) Applications
+[170] (Heading 3) Medical Image Diagnostics
+[180] (Heading 3) Autonomous Vehicles and Robotics
+[190] (Heading 3) Satellite and Aerial Image Analysis
+[202] (Heading 3) Security and Surveillance Systems
+[211] (Heading 3) Industrial Quality Inspection
+[220] (Heading 3) Recent Developments in Applications
+[225] (Heading 3) Organization and Project Plan Chapter 1 : Introduction
+[227] (Heading 3) Chapter 2 : Literature
+[231] (Heading 3) Chapter 3 : System Design
+[242] (Heading 3) Chapter 4 : Implementation Phase
+[253] (Heading 2) LITERATURE SURVEY
+[257] (Heading 3) Literature
+[260] (Heading 3) Traditional Edge Detection Techniques
+[264] (Heading 3) Sobel Operator:
+[280] (Heading 3) Prewitt Operator:
+[289] (Heading 3) Roberts Cross Operator:
+[324] (Heading 3) Canny Edge Detection
+[330] (Heading 3) Particle Swarm Optimization (PSO)
+[334] (Heading 3) Machine Learning in Image Processing
+[339] (Heading 3) Combining PSO and Machine Learning for Edge Detection
+[343] (Heading 3) Research Gaps and Opportunities
+[347] (Heading 3) Comparative Analysis of Existing Techniques
+[379] (Heading 2) SYSTEM DESIGN
+[383] (Heading 3) Proposed System
+[395] (Heading 3) System Architecture
+[398] (Normal) Fig. 3.1 Architecture Design
+[403] (Heading 3) Key Features of the Proposed System
+[409] (Heading 3) Hybrid Intelligence
+[414] (Heading 3) Noise Resilience
+[418] (Heading 3) Domain Flexibility
+[422] (Heading 3) Implementation Environment
+[425] (Heading 3) Hardware and Software Environment
+[440] (Heading 3) Dataset and Inputs
+[456] (Heading 3) Database Specification
+[461] (Heading 3) Dataset Selection
+[464] (Heading 3) Berkeley Segmentation Dataset (BSDS500)
+[469] (Heading 3) COCO Dataset (Common Objects in Context)
+[476] (Heading 3) Synthetic Image Sets
+[481] (Heading 3) Data Organization
+[495] (Heading 3) Database Characteristics
+[506] (Heading 3) Algorithms/Techniques/Procedures Used
+[513] (Heading 3) Particle Swarm Optimization (PSO)
+[522] (Heading 3) PSO: Background and Equations
+[530] (Heading 3) Where:
+[544] (Heading 3) Algorithm
+[548] (Heading 3) Initialization:
+[555] (Heading 3) Evaluation:
+[568] (Heading 3) Updating Velocities and Positions:
+[588] (Heading 3) Termination:
+[592] (Heading 3) Flowchart :
+[632] (Heading 3) Role in Edge Detection
+[637] (Heading 3) Machine Learning (ML) Techniques for Edge Detection
+[640] (Heading 3) Convolutional Neural Networks (CNN)
+[643] (Heading 3) CNN Architecture
+[654] (Heading 3) Training and Optimization
+[660] (Heading 3) Support Vector Machines (SVM)
+[664] (Heading 3) Integration of PSO with ML
+[675] (Heading 3) Integration of Vision Transformers and PSO for Adaptive Edge Detection
+[684] (Heading 3) Self-Attention and Multi-Head Attention
+[688] (Heading 3) Self-Attention Mechanism
+[708] (Heading 3) Why Self-Attention Is Useful for Vision Tasks
+[717] (Heading 3) Multi-Head Attention
+[726] (Heading 3) Additional Components Supporting Attention
+[737] (Heading 3) Impact on Vision Transformer (ViT)
+[745] (Heading 3) PSO + ViT: Hybrid Strategy
+[760] (Heading 3) Evaluation Metrics
+[770] (Heading 2) PERFORMANCE ANALYSIS
+[774] (Heading 3) Parameter Configuration
+[795] (Heading 3) Fitness Function :
+[806] (Heading 3) Evaluation Metrics
+[818] (Heading 3) Results and Observations
+[835] (Heading 3) Qualitative Analysis :
+[848] (Heading 3) Performance Discussion
+[858] (Heading 3) Computational Complexity and Runtime
+[881] (Heading 3) Sustainable Development Goal
+[887] (Heading 3) Cost Estimation of the Project
+[892] (Heading 3) Cost Calculation Formula Used
+[900] (Heading 3) Hardware & System Usage
+[902] (Heading 3) Hardware Subtotal: ₹2,300
+[907] (Heading 3) Software Subtotal: ₹300
+[912] (Heading 3) Cloud Subtotal: ₹1,200
+[918] (Heading 3) Dataset Subtotal: ₹800
+[922] (Heading 3) Development Subtotal: ₹5,000
+[926] (Heading 3) Miscellaneous Subtotal: ₹500
+[932] (Heading 3) Limitations
+[944] (Heading 2) CONCLUSION
+[957] (Heading 2) REFERENCES
+[986] (Heading 1) 7%	Overall Similarity
+[1017] (Heading 1) *% detected as AI

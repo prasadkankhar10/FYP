@@ -18,12 +18,14 @@ class ConceptUpdate(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
     difficulty: Optional[str] = None
+    parent_concept_id: Optional[int] = None
 
 
 class ConceptOut(BaseModel):
     id: int
     subject_id: int
     user_id: int
+    parent_concept_id: Optional[int] = None
     title: str
     content: Optional[str]
     difficulty: str

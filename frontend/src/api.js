@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.PROD 
-    ? 'https://prasadkankhar-fyp-backend.hf.space' 
-    : 'http://127.0.0.1:8000',
+  baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000',
 });
+
+export const showToast = (message, type = 'info') => {
+  window.dispatchEvent(new CustomEvent('show-toast', { detail: { message, type } }));
+};
 
 // Request interceptor to attach JWT token
 api.interceptors.request.use(
