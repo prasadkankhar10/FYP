@@ -137,3 +137,8 @@ def _adjust_scheduling_for_graph_context(updated: dict, avg_neighbor_R: float) -
     updated["difficulty_fsrs"] = round(new_difficulty, 4)
 
     return updated
+
+
+# Alias for backward-compatibility with earlier API and test suites
+_adjust_interval_for_graph_context = _adjust_scheduling_for_graph_context
+
